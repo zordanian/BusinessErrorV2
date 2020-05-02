@@ -62,8 +62,14 @@ namespace BusinessErrorV2
             QueueItems item = (QueueItems)DG.SelectedItem;
             es.getData(item.Key.ToString());
 
+            Popup1.IsOpen = true;
+
         }
 
+        public void ClosePopup(object sender, RoutedEventArgs e)
+        {
+            Popup1.IsOpen = false;
+        }
 
 
         private ObservableCollection<QueueItems> addToList(IQueryable<QueueItems> data1)

@@ -37,6 +37,16 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
+        <Popup  Name="Popup1" HorizontalAlignment="center"   
+        VerticalAlignment="top" Placement="Center" Width="400" Height="600" IsOpen="False">
+            <StackPanel Background="White">
+                <TextBlock Name="McTextBlock"   
+             Background="LightBlue" >  
+             Log view
+                </TextBlock>
+                <Button Click="ClosePopup" Width="100" Content="Close window" />
+            </StackPanel>
+        </Popup>
 
         <DataGrid Grid.Column="1" Grid.Row="5" Name="DG" AlternatingRowBackground="Gray"  CanUserAddRows="False" VerticalAlignment="Top" Grid.ColumnSpan="7"
             AutoGenerateColumns="False" Margin="20,20,20,20">
