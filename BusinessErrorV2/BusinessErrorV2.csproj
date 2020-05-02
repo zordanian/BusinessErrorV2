@@ -306,10 +306,9 @@
     <Compile Include="Databases\Webhooks.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DataAccess.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Models\SQLModel.cs" />
-    <Compile Include="Repository\elasticSearchRepository.cs" />
+    <Compile Include="Repository\ElasticSearchRepository.cs" />
     <Compile Include="Repository\QueueItemsRepository.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -4,6 +4,7 @@ using BussinesErrorDashboard.Repository;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -30,10 +31,11 @@ namespace BusinessErrorV2
         public MainWindow()
         {
             InitializeComponent();
-            DataAccess da = new DataAccess();
             UIpathData  = new ObservableCollection<QueueItems>();
             
         }
+
+        
 
         private async void ButtonClick_Click(object sender, RoutedEventArgs e)
         {
@@ -54,6 +56,16 @@ namespace BusinessErrorV2
             //elastic.getData();
         }
 
+        private void ButtonLog_Click(object sender, RoutedEventArgs e)
+        {
+            ElasticSearchRepository es = new ElasticSearchRepository();
+            QueueItems item = (QueueItems)DG.SelectedItem;
+            es.getData(item.Key.ToString());
+
+        }
+
+
+
         private ObservableCollection<QueueItems> addToList(IQueryable<QueueItems> data1)
         {
             ObservableCollection<QueueItems> test = new ObservableCollection<QueueItems>();
@@ -65,6 +77,8 @@ namespace BusinessErrorV2
             
             return test;
         }
+
+
     }
 
 }

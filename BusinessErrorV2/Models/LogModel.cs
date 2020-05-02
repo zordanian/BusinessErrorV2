@@ -8,11 +8,15 @@ namespace BussinesErrorDashboard.Models
 {
     public class LogModel
     {
-        public string _id{ get; set; }
-        public string transactionId { get; set; }
-        
+       
+        public string queueName { get; set; }
+        public string TransactionId { get; set; }
+        public string message { get; set; }
+        public string robotName { get; set; }
+        public string processName { get; set; }
+        public string timeStamp { get; set; }
 
-    
+
 
     }
 }

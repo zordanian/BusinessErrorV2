@@ -11,27 +11,28 @@ using System.Windows.Documents;
 
 namespace BussinesErrorDashboard.Repository
 {
-    class elasticSearchRepository
+    class ElasticSearchRepository
     {
 
 
-        public void getData()
+        public void getData(string query)
         {
             var settings = new ConnectionSettings(new Uri("http://nks01480.nykreditnet.net:9201"))
-            .DefaultIndex("default-2020.03").DisableDirectStreaming();
+            .DefaultIndex("default-2020.05");
 
             var client = new ElasticClient(settings);
 
             var searchResponse = client.Search<LogModel>(s => s
             .From(0)
-            .Size(10)
+            .Size(1)
             .Query(q => q
             .Match(m => m
-            .Field(f => f.transactionId)
-            .Query("D82B0157-EE1D-445D-AB6B-C0F234FE4E0B")
+            .Field(f => f.TransactionId) 
+            .Query(query)
             )).TypedKeys(null));
 
-            var test = searchResponse.Documents;
+            IReadOnlyCollection<LogModel> test = searchResponse.Documents;
+            
         }
     }
 }
