@@ -20,7 +20,7 @@ namespace BussinesErrorDashboard.Repository
             db.Configuration.ProxyCreationEnabled = false;
         }
 
-        public IQueryable<QueueItems> getData(DateTime from, DateTime to,String query)
+        public IQueryable<QueueItems> getData(DateTime? from, DateTime? to,String query)
         {
             try
             {

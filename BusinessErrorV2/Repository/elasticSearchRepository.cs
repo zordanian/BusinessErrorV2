@@ -15,7 +15,7 @@ namespace BussinesErrorDashboard.Repository
     {
 
 
-        public void getData(string query)
+        public IReadOnlyCollection<LogModel> getData(string query)
         {
             var settings = new ConnectionSettings(new Uri("http://nks01480.nykreditnet.net:9201"))
             .DefaultIndex("default-2020.05");
@@ -32,7 +32,7 @@ namespace BussinesErrorDashboard.Repository
             )).TypedKeys(null));
 
             IReadOnlyCollection<LogModel> test = searchResponse.Documents;
-            
+            return test;
         }
     }
 }

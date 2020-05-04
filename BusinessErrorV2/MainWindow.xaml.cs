@@ -39,12 +39,30 @@ namespace BusinessErrorV2
 
         private async void ButtonClick_Click(object sender, RoutedEventArgs e)
         {
+            DateTime? from = null;
+            DateTime? to = null;
+            QueueItemsRepository repo = new QueueItemsRepository();
+
             Spinner.Spin = true;
             var query = SearchBox.Text;
-            DateTime from = DateTime.Parse(FromDate.Text).Date;
-            DateTime to = DateTime.Parse(ToDate.Text).Date;
 
-            QueueItemsRepository repo = new QueueItemsRepository();
+            try
+            {
+                from = DateTime.Parse(FromDate.Text).Date;
+            }
+            catch(Exception exc)
+            {
+
+            }
+            try
+            {
+                to = DateTime.Parse(ToDate.Text).Date;
+            }
+            catch (Exception exc)
+            {
+
+            }
+            
             IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query));
 
             UIpathData = await Task.Run(() => addToList(data));         
@@ -60,9 +78,17 @@ namespace BusinessErrorV2
         {
             ElasticSearchRepository es = new ElasticSearchRepository();
             QueueItems item = (QueueItems)DG.SelectedItem;
-            es.getData(item.Key.ToString());
+            IReadOnlyCollection<LogModel> esData = es.getData(item.Key.ToString());
+
+            string esDataString = "Process Name: " + esData.ElementAt(0).processName + "\n" +
+               "Robot name: " + esData.ElementAt(0).robotName + "\n" +
+               "Timestamp: " + esData.ElementAt(0).timeStamp + "\n" +
+               "Transaction ID: " + esData.ElementAt(0).TransactionId + "\n" +
+               "Message: " + esData.ElementAt(0).message;
+
 
             Popup1.IsOpen = true;
+            text.Text = esDataString;
 
         }
 
