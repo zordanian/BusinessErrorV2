@@ -13,20 +13,37 @@ namespace BussinesErrorDashboard.Repository
     {
         private UiPathEntities db;
         private IQueryable<QueueItems> tQuery;
+        
 
         public QueueItemsRepository()
         {
             this.db = new UiPathEntities();
-            db.Configuration.ProxyCreationEnabled = false;
+
+            
         }
 
         public IQueryable<QueueItems> getData(DateTime? from, DateTime? to,String query)
         {
+
+            if (query != "" && from == null && to == null)
+            {
+                try
+                {
+                    tQuery = db.QueueItems.Where(c => c.Reference == query || c.SpecificData.Contains(query));
+                }
+                catch
+                {
+
+                }
+                return tQuery;
+            }
+            
             try
             {
-                tQuery = db.QueueItems.Where(c => c.Reference == query && c.StartProcessing >= from && to <= c.EndProcessing
-                || c.SpecificData.Contains(query) && c.StartProcessing >= from && to <= c.EndProcessing);
-             
+                
+                tQuery = db.QueueItems.Where(c => c.Reference == query && c.StartProcessing >= from && c.EndProcessing <= to
+                || c.SpecificData.Contains(query) && c.StartProcessing >= from && c.EndProcessing <= to).Take(5);
+
             }
             catch (Exception)
             {
@@ -39,8 +56,23 @@ namespace BussinesErrorDashboard.Repository
             else{
                 return null;
             }
+
+           
+        }
+        public QueueItems getItem(string transactionId)
+        {
+
+            return db.QueueItems.Single(c => c.Key.ToString() == transactionId);
         }
 
-        
+        public IEnumerable<string> getColumns()
+        {
+            var names = typeof(QueueItems).GetProperties()
+                        .Select(property => property.Name)
+                        .ToArray();
+            return names;
+        }
+
+
     }
 }

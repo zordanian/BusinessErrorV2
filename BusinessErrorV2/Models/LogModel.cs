@@ -17,6 +17,5 @@ namespace BussinesErrorDashboard.Models
         public string timeStamp { get; set; }
 
 
-
     }
 }

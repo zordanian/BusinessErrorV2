@@ -1,9 +1,13 @@
 ﻿using BusinessErrorV2.Databases;
+using BusinessErrorV2.Models;
+using BusinessErrorV2.Repository;
 using BussinesErrorDashboard.Models;
 using BussinesErrorDashboard.Repository;
+using Spire.Xls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -32,53 +36,60 @@ namespace BusinessErrorV2
         {
             InitializeComponent();
             UIpathData  = new ObservableCollection<QueueItems>();
-            
+            EnvironmentRepository repo = new EnvironmentRepository();
+            ProcessName.ItemsSource = repo.getProcessNames();
+
         }
 
         
 
         private async void ButtonClick_Click(object sender, RoutedEventArgs e)
         {
-            DateTime? from = null;
-            DateTime? to = null;
-            QueueItemsRepository repo = new QueueItemsRepository();
-
-            Spinner.Spin = true;
-            var query = SearchBox.Text;
-
-            try
+            CheckValidations validate = new CheckValidations();
+            bool vallidation =  validate.CheckValidation(SearchBox,FromDate,ToDate);
+            if (vallidation)
             {
-                from = DateTime.Parse(FromDate.Text).Date;
+                DateTime? from = null;
+                DateTime? to = null;
+                QueueItemsRepository repo = new QueueItemsRepository();
+
+                Spinner.Spin = true;
+                var query = SearchBox.Text;
+
+                try
+                {
+                    from = DateTime.Parse(FromDate.Text).Date;
+                }
+                catch (Exception)
+                {
+
+                }
+                try
+                {
+                    to = DateTime.Parse(ToDate.Text).Date;
+                }
+                catch (Exception)
+                {
+
+                }
+
+                IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query));
+
+                UIpathData = await Task.Run(() => addToList(data));
+                DG.ItemsSource = UIpathData;
+                Spinner.Spin = false;
             }
-            catch(Exception exc)
+            else
             {
 
             }
-            try
-            {
-                to = DateTime.Parse(ToDate.Text).Date;
-            }
-            catch (Exception exc)
-            {
-
-            }
-            
-            IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query));
-
-            UIpathData = await Task.Run(() => addToList(data));         
-            DG.ItemsSource = UIpathData;
-            Spinner.Spin = false;
-            
-
-            //elasticSearchRepository elastic = new elasticSearchRepository();
-            //elastic.getData();
         }
 
         private void ButtonLog_Click(object sender, RoutedEventArgs e)
         {
             ElasticSearchRepository es = new ElasticSearchRepository();
             QueueItems item = (QueueItems)DG.SelectedItem;
-            IReadOnlyCollection<LogModel> esData = es.getData(item.Key.ToString());
+            IReadOnlyCollection<LogModel> esData = es.getData(item.Key.ToString(),(DateTime)item.StartProcessing);
 
             string esDataString = "Process Name: " + esData.ElementAt(0).processName + "\n" +
                "Robot name: " + esData.ElementAt(0).robotName + "\n" +
@@ -92,10 +103,56 @@ namespace BusinessErrorV2
 
         }
 
+        
+
         public void ClosePopup(object sender, RoutedEventArgs e)
         {
             Popup1.IsOpen = false;
         }
+
+        private void ButtonExcel_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Document"; // Default file name
+            dlg.DefaultExt = ".xlsx"; // Default file extension
+            dlg.Filter = "Text documents (.xlsx)|*.xlsx"; // Filter files by extension
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+            // Process save file dialog box results
+            string fileName = "";
+            if (result == true)
+            {
+                // Save document
+                fileName = dlg.FileName;
+            }
+            CreateWorkbook();
+         }
+
+        private void CreateWorkbook()
+        {
+            QueueItems item = (QueueItems)DG.SelectedItem;
+            string key = item.Key.ToString();
+            QueueItemsRepository repo = new QueueItemsRepository();
+            QueueItems qI = repo.getItem(key);
+            
+            DataTable t = new DataTable();
+
+            IEnumerable<string> columns = repo.getColumns();
+            
+            foreach(var column in columns)
+            {
+                t.Columns.Add(column);
+            }
+
+            t.Rows.Add(qI);
+
+            Workbook book = new Workbook();
+            Worksheet sheet = book.Worksheets[0];
+            sheet.InsertDataTable(t, true, 1, 1);
+            book.SaveToFile("insertTableToExcel.xls");
+            System.Diagnostics.Process.Start("insertTableToExcel.xls");
+        }
+
 
 
         private ObservableCollection<QueueItems> addToList(IQueryable<QueueItems> data1)
@@ -110,7 +167,11 @@ namespace BusinessErrorV2
             return test;
         }
 
-
+        //private void ProcessName_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    EnvironmentRepository repo = new EnvironmentRepository();
+        //    ProcessName.ItemsSource = repo.getProcessNames();
+        //}
     }
 
 }
