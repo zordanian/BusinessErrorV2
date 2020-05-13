@@ -125,32 +125,38 @@ namespace BusinessErrorV2
                 // Save document
                 fileName = dlg.FileName;
             }
-            CreateWorkbook();
+            CreateWorkbook(fileName);
          }
 
-        private void CreateWorkbook()
+        private void CreateWorkbook(string filename)
         {
             QueueItems item = (QueueItems)DG.SelectedItem;
             string key = item.Key.ToString();
             QueueItemsRepository repo = new QueueItemsRepository();
-            QueueItems qI = repo.getItem(key);
-            
-            DataTable t = new DataTable();
-
+            IList<string> qI = repo.getItem(key);    
+            DataTable dt = new DataTable();
             IEnumerable<string> columns = repo.getColumns();
             
+            //Add columns to datatable
             foreach(var column in columns)
             {
-                t.Columns.Add(column);
+                dt.Columns.Add(column);
             }
 
-            t.Rows.Add(qI);
+            DataRow dr = dt.NewRow();
+            qI = qI.ToArray();
 
+            for (int i = 0; i < 38; i++)
+            {
+                dr[i] = qI[i];
+                
+            }
+            dt.Rows.Add(dr);
             Workbook book = new Workbook();
             Worksheet sheet = book.Worksheets[0];
-            sheet.InsertDataTable(t, true, 1, 1);
-            book.SaveToFile("insertTableToExcel.xls");
-            System.Diagnostics.Process.Start("insertTableToExcel.xls");
+            sheet.InsertDataTable(dt, true, 1, 1);
+            book.SaveToFile(filename);
+            //System.Diagnostics.Process.Start("insertTableToExcel.xls");
         }
 
 

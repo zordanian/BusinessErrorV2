@@ -29,5 +29,19 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="BusinessErrorV2.Repository.EnvironmentRepository">
+    <Position X="9" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\EnvironmentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessErrorV2.Models.CheckValidations">
+    <Position X="11.25" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CheckValidations.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
