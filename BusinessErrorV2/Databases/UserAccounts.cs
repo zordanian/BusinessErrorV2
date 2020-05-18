@@ -27,6 +27,5 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
-        public Nullable<System.DateTime> LastLoginTime { get; set; }
     }
 }

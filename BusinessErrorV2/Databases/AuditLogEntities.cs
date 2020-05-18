@@ -20,6 +20,7 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> AuditLogId { get; set; }
         public string CustomData { get; set; }
         public int Action { get; set; }
+        public Nullable<int> TenantId { get; set; }
     
         public virtual AuditLogs AuditLogs { get; set; }
     }

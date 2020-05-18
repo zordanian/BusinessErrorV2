@@ -29,6 +29,7 @@ namespace BusinessErrorV2.Databases
         public long OrganizationUnitId { get; set; }
         public int NumberOfRemainingTransactions { get; set; }
         public int NumberOfInProgressTransactions { get; set; }
+        public int NumberOfAbandonedTransactions { get; set; }
     
         public virtual QueueDefinitions QueueDefinitions { get; set; }
     }

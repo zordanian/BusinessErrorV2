@@ -33,11 +33,20 @@ namespace BusinessErrorV2.Databases
         public virtual DbSet<AuditLogEntities> AuditLogEntities { get; set; }
         public virtual DbSet<AuditLogs> AuditLogs { get; set; }
         public virtual DbSet<BackgroundJobs> BackgroundJobs { get; set; }
+        public virtual DbSet<Calendars> Calendars { get; set; }
+        public virtual DbSet<CredentialStores> CredentialStores { get; set; }
+        public virtual DbSet<DefaultCredentialStores> DefaultCredentialStores { get; set; }
         public virtual DbSet<Editions> Editions { get; set; }
+        public virtual DbSet<EntityChanges> EntityChanges { get; set; }
+        public virtual DbSet<EntityChangeSets> EntityChangeSets { get; set; }
+        public virtual DbSet<EntityPropertyChanges> EntityPropertyChanges { get; set; }
         public virtual DbSet<Environments> Environments { get; set; }
+        public virtual DbSet<ExecutionMedia> ExecutionMedia { get; set; }
         public virtual DbSet<Features> Features { get; set; }
         public virtual DbSet<HostLicenses> HostLicenses { get; set; }
+        public virtual DbSet<JobEvents> JobEvents { get; set; }
         public virtual DbSet<Jobs> Jobs { get; set; }
+        public virtual DbSet<JobTriggers> JobTriggers { get; set; }
         public virtual DbSet<Languages> Languages { get; set; }
         public virtual DbSet<LanguageTexts> LanguageTexts { get; set; }
         public virtual DbSet<Licenses> Licenses { get; set; }
@@ -46,9 +55,10 @@ namespace BusinessErrorV2.Databases
         public virtual DbSet<MessageTemplates> MessageTemplates { get; set; }
         public virtual DbSet<Notifications> Notifications { get; set; }
         public virtual DbSet<NotificationSubscriptions> NotificationSubscriptions { get; set; }
+        public virtual DbSet<OrganizationUnitRoles> OrganizationUnitRoles { get; set; }
         public virtual DbSet<OrganizationUnits> OrganizationUnits { get; set; }
-        public virtual DbSet<Packages> Packages { get; set; }
-        public virtual DbSet<PackageVersions> PackageVersions { get; set; }
+        public virtual DbSet<PackageDefinitions> PackageDefinitions { get; set; }
+        public virtual DbSet<PackageMetadata> PackageMetadata { get; set; }
         public virtual DbSet<Permissions> Permissions { get; set; }
         public virtual DbSet<PreviousPasswords> PreviousPasswords { get; set; }
         public virtual DbSet<ProcessSchedules> ProcessSchedules { get; set; }
@@ -66,9 +76,12 @@ namespace BusinessErrorV2.Databases
         public virtual DbSet<RobotLicenses> RobotLicenses { get; set; }
         public virtual DbSet<RobotLicenseStats> RobotLicenseStats { get; set; }
         public virtual DbSet<Robots> Robots { get; set; }
+        public virtual DbSet<RoleClaims> RoleClaims { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
         public virtual DbSet<Sessions> Sessions { get; set; }
         public virtual DbSet<Settings> Settings { get; set; }
+        public virtual DbSet<TaskCatalogs> TaskCatalogs { get; set; }
+        public virtual DbSet<Tasks> Tasks { get; set; }
         public virtual DbSet<TenantNotifications> TenantNotifications { get; set; }
         public virtual DbSet<Tenants> Tenants { get; set; }
         public virtual DbSet<UserAccounts> UserAccounts { get; set; }
@@ -92,6 +105,7 @@ namespace BusinessErrorV2.Databases
         public virtual DbSet<QRTZ_SIMPLE_TRIGGERS> QRTZ_SIMPLE_TRIGGERS { get; set; }
         public virtual DbSet<QRTZ_SIMPROP_TRIGGERS> QRTZ_SIMPROP_TRIGGERS { get; set; }
         public virtual DbSet<QRTZ_TRIGGERS> QRTZ_TRIGGERS { get; set; }
+        public virtual DbSet<ErrorLogs> ErrorLogs { get; set; }
         public virtual DbSet<vwQueueReferences> vwQueueReferences { get; set; }
         public virtual DbSet<vwRobotAssociatedProcesses> vwRobotAssociatedProcesses { get; set; }
     

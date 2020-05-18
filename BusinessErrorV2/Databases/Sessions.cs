@@ -27,7 +27,7 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
-        public long OrganizationUnitId { get; set; }
+        public Nullable<long> OrganizationUnitId { get; set; }
         public bool IsUnresponsive { get; set; }
         public string HostMachineName { get; set; }
         public Nullable<long> MachineId { get; set; }

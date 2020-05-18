@@ -12,17 +12,13 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class Packages
+    public partial class PackageMetadata
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Packages()
-        {
-            this.PackageVersions = new HashSet<PackageVersions>();
-        }
-    
         public long Id { get; set; }
         public int TenantId { get; set; }
-        public string Identifier { get; set; }
+        public string Version { get; set; }
+        public string InputArguments { get; set; }
+        public string OutputArguments { get; set; }
         public bool IsDeleted { get; set; }
         public Nullable<long> DeleterUserId { get; set; }
         public Nullable<System.DateTime> DeletionTime { get; set; }
@@ -30,8 +26,7 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PackageVersions> PackageVersions { get; set; }
+        public int Purpose { get; set; }
+        public string Identifier { get; set; }
     }
 }

@@ -26,8 +26,11 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
+        public string ExternalName { get; set; }
+        public Nullable<long> CredentialStoreId { get; set; }
     
         public virtual Assets Assets { get; set; }
+        public virtual CredentialStores CredentialStores { get; set; }
         public virtual Releases Releases { get; set; }
         public virtual Robots Robots { get; set; }
     }

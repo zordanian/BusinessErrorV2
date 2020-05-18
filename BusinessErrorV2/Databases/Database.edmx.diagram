@@ -4,133 +4,164 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cc4b7f20d5d54d1eab1dcf092c8054a7" Name="Diagram1">
-        <EntityTypeShape EntityType="UiPathModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Assets" Width="1.5" PointX="9" PointY="16" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.AssetValues" Width="1.5" PointX="11.25" PointY="14" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.AuditLogEntities" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.AuditLogs" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.BackgroundJobs" Width="1.5" PointX="0.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Editions" Width="1.5" PointX="3.75" PointY="16.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Environments" Width="1.5" PointX="1.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Features" Width="1.5" PointX="6" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.HostLicenses" Width="1.5" PointX="18.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Jobs" Width="1.5" PointX="14.25" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Languages" Width="1.5" PointX="7.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.LanguageTexts" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Licenses" Width="1.5" PointX="21" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Logs" Width="1.5" PointX="9.75" PointY="20.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Machines" Width="1.5" PointX="3.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.MessageTemplates" Width="1.5" PointX="16.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Notifications" Width="1.5" PointX="18.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.NotificationSubscriptions" Width="1.5" PointX="20.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.OrganizationUnits" Width="1.5" PointX="5.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Packages" Width="1.5" PointX="16.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.PackageVersions" Width="1.5" PointX="19" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Permissions" Width="1.5" PointX="5.25" PointY="41" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.PreviousPasswords" Width="1.5" PointX="3" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.ProcessSchedules" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QueueDefinitions" Width="1.5" PointX="6.75" PointY="45.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QueueItemComments" Width="1.5" PointX="3" PointY="34.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QueueItemEvents" Width="1.5" PointX="6" PointY="32.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QueueItems" Width="1.5" PointX="9" PointY="29.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QueueProcessingRecords" Width="1.5" PointX="9" PointY="41.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QueueProcessingRecordsOld" Width="1.5" PointX="9" PointY="46" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QueueProcessingRecordsStaging" Width="1.5" PointX="9" PointY="50.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Releases" Width="1.5" PointX="1.5" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.ReleaseVersions" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.RobotCredentials" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.RobotLicenseLogs" Width="1.5" PointX="8.25" PointY="25.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.RobotLicenses" Width="1.5" PointX="11.25" PointY="26.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.RobotLicenseStats" Width="1.5" PointX="20.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Robots" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Roles" Width="1.5" PointX="3" PointY="52.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Sessions" Width="1.5" PointX="16.5" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Settings" Width="1.5" PointX="3" PointY="57.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.TenantNotifications" Width="1.5" PointX="13.75" PointY="22.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Tenants" Width="1.5" PointX="6" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.UserAccounts" Width="1.5" PointX="20.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.UserClaims" Width="1.5" PointX="3" PointY="66.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.UserLoginAttempts" Width="1.5" PointX="21.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.UserLogins" Width="1.5" PointX="3" PointY="69.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.UserNotifications" Width="1.5" PointX="21.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.UserOrganizationUnits" Width="1.5" PointX="22.75" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.UserRoles" Width="1.5" PointX="3" PointY="72.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Users" Width="1.5" PointX="0.75" PointY="28.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.WebhookEvents" Width="1.5" PointX="18" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.Webhooks" Width="1.5" PointX="15.75" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_BLOB_TRIGGERS" Width="1.5" PointX="15.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_CALENDARS" Width="1.5" PointX="22.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_CRON_TRIGGERS" Width="1.5" PointX="13.25" PointY="3.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_FIRED_TRIGGERS" Width="1.5" PointX="22.75" PointY="21.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_JOB_DETAILS" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_LOCKS" Width="1.5" PointX="23.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_PAUSED_TRIGGER_GRPS" Width="1.5" PointX="23.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_SCHEDULER_STATE" Width="1.5" PointX="23.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_SIMPLE_TRIGGERS" Width="1.5" PointX="13.25" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_SIMPROP_TRIGGERS" Width="1.5" PointX="13.25" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.QRTZ_TRIGGERS" Width="1.5" PointX="11" PointY="5.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.vwQueueReferences" Width="1.5" PointX="15.75" PointY="25.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="UiPathModel.vwRobotAssociatedProcesses" Width="1.5" PointX="24.75" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AssetValues_dbo_Assets_AssetId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AssetValues_dbo_Releases_ReleaseId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AssetValues_dbo_Robots_RobotId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AuditLogEntities_dbo_AuditLogs_AuditLogId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AuditLogs_dbo_Users_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpTenants_dbo_AbpEditions_EditionId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Releases_dbo_Environments_EnvironmentId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Licenses_dbo_HostLicenses_HostLicenseId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Jobs_dbo_ProcessSchedules_StartingScheduleId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Jobs_dbo_Releases_ReleaseId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Jobs_dbo_Robots_RobotId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Sessions_dbo_Jobs_JobId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Robots_dbo_Machines_MachineId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Sessions_dbo_Machines_MachineId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_PackageVersions_dbo_Packages_PackageId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_PreviousPasswords_dbo_Users_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_ProcessSchedules_dbo_Releases_ReleaseId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItems_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueProcessingRecords_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueProcessingRecordsOld_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueProcessingRecordsStaging_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItemComments_dbo_QueueItems_QueueItemId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItemComments_dbo_Users_CreatorUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItemEvents_dbo_QueueItems_QueueItemId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItemEvents_dbo_Users_ReviewerUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItemEvents_dbo_Users_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItems_dbo_Robots_RobotId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_QueueItems_dbo_Users_ReviewerUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_ReleaseVersions_dbo_Releases_ReleaseId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_RobotCredentials_dbo_Robots_RobotId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_RobotLicenseLogs_dbo_Robots_RobotId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_RobotLicenseLogs_dbo_Tenants_TenantId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_RobotLicenses_dbo_Robots_RobotId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_RobotLicenses_dbo_Tenants_TenantId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_Sessions_dbo_Robots_RobotId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpSettings_dbo_AbpUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpUserClaims_dbo_Users_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_dbo_WebhookEvents_dbo_Webhooks_WebhookId" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_QRTZ_CRON_TRIGGERS_QRTZ_TRIGGERS" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_QRTZ_TRIGGERS_QRTZ_JOB_DETAILS" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_QRTZ_SIMPLE_TRIGGERS_QRTZ_TRIGGERS" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.FK_QRTZ_SIMPROP_TRIGGERS_QRTZ_TRIGGERS" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.ProcessSchedulesXRobots" ManuallyRouted="false" />
-        <AssociationConnector Association="UiPathModel.RobotsXEnvironments" ManuallyRouted="false" />
+      <Diagram DiagramId="7a90c0d6dd3a47f4ab6e078111a487b6" Name="Diagram1">
+        <EntityTypeShape EntityType="UiPath_TestModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Assets" Width="1.5" PointX="6" PointY="73" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.AssetValues" Width="1.5" PointX="8.25" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.AuditLogEntities" Width="1.5" PointX="5.25" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.AuditLogs" Width="1.5" PointX="3" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.BackgroundJobs" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Calendars" Width="1.5" PointX="1.5" PointY="79.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.CredentialStores" Width="1.5" PointX="9" PointY="39" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.DefaultCredentialStores" Width="1.5" PointX="11.25" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Editions" Width="1.5" PointX="6.75" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.EntityChanges" Width="1.5" PointX="10" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.EntityChangeSets" Width="1.5" PointX="7.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.EntityPropertyChanges" Width="1.5" PointX="12.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Environments" Width="1.5" PointX="2.25" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.ExecutionMedia" Width="1.5" PointX="11.25" PointY="60" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Features" Width="1.5" PointX="9" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.HostLicenses" Width="1.5" PointX="9.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.JobEvents" Width="1.5" PointX="3" PointY="51.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Jobs" Width="1.5" PointX="14.25" PointY="57.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.JobTriggers" Width="1.5" PointX="16.5" PointY="60.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Languages" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.LanguageTexts" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Licenses" Width="1.5" PointX="12" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Logs" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Machines" Width="1.5" PointX="3.75" PointY="72.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.MessageTemplates" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Notifications" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.NotificationSubscriptions" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.OrganizationUnitRoles" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.OrganizationUnits" Width="1.5" PointX="6" PointY="78.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.PackageDefinitions" Width="1.5" PointX="11.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.PackageMetadata" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Permissions" Width="1.5" PointX="5.25" PointY="68.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.PreviousPasswords" Width="1.5" PointX="3" PointY="55.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.ProcessSchedules" Width="1.5" PointX="3.75" PointY="77.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QueueDefinitions" Width="1.5" PointX="6.75" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QueueItemComments" Width="1.5" PointX="6" PointY="53.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QueueItemEvents" Width="1.5" PointX="6" PointY="48" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QueueItems" Width="1.5" PointX="9" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QueueProcessingRecords" Width="1.5" PointX="9" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QueueProcessingRecordsOld" Width="1.5" PointX="9" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QueueProcessingRecordsStaging" Width="1.5" PointX="9" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Releases" Width="1.5" PointX="4.5" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.ReleaseVersions" Width="1.5" PointX="12" PointY="65.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.RobotCredentials" Width="1.5" PointX="11.25" PointY="54.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.RobotLicenseLogs" Width="1.5" PointX="8.25" PointY="82.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.RobotLicenses" Width="1.5" PointX="8.25" PointY="86.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.RobotLicenseStats" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Robots" Width="1.5" PointX="6" PointY="58.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.RoleClaims" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Roles" Width="1.5" PointX="3" PointY="86.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Sessions" Width="1.5" PointX="19.5" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Settings" Width="1.5" PointX="3" PointY="92.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.TaskCatalogs" Width="1.5" PointX="0.75" PointY="63.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Tasks" Width="1.5" PointX="3" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.TenantNotifications" Width="1.5" PointX="16.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Tenants" Width="1.5" PointX="9" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.UserAccounts" Width="1.5" PointX="16.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.UserClaims" Width="1.5" PointX="3" PointY="107.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.UserLoginAttempts" Width="1.5" PointX="16.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.UserLogins" Width="1.5" PointX="3" PointY="110.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.UserNotifications" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.UserOrganizationUnits" Width="1.5" PointX="8.25" PointY="69.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.UserRoles" Width="1.5" PointX="3" PointY="113.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Users" Width="1.5" PointX="0.75" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.WebhookEvents" Width="1.5" PointX="10" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.Webhooks" Width="1.5" PointX="7.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_BLOB_TRIGGERS" Width="1.5" PointX="2.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_CALENDARS" Width="1.5" PointX="4.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_CRON_TRIGGERS" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_FIRED_TRIGGERS" Width="1.5" PointX="16.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_JOB_DETAILS" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_LOCKS" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_PAUSED_TRIGGER_GRPS" Width="1.5" PointX="18.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_SCHEDULER_STATE" Width="1.5" PointX="18.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_SIMPLE_TRIGGERS" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_SIMPROP_TRIGGERS" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.QRTZ_TRIGGERS" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.ErrorLogs" Width="1.5" PointX="18.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.vwQueueReferences" Width="1.5" PointX="13.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UiPath_TestModel.vwRobotAssociatedProcesses" Width="1.5" PointX="18.75" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AssetValues_dbo_Assets_AssetId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AssetValues_dbo_CredentialStores_CredentialStoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AssetValues_dbo_Releases_ReleaseId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AssetValues_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AuditLogEntities_dbo_AuditLogs_AuditLogId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AuditLogs_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_ProcessSchedules_dbo_Calendars_CalendarId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_DefaultCredentialStores_dbo_CredentialStores_CredentialStoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_RobotCredentials_dbo_CredentialStores_CredentialStoreId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpFeatures_dbo_AbpEditions_EditionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpTenants_dbo_AbpEditions_EditionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_EntityChanges_dbo_EntityChangeSets_EntityChangeSetId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_EntityPropertyChanges_dbo_EntityChanges_EntityChangeId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Releases_dbo_Environments_EnvironmentId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_ExecutionMedia_dbo_Jobs_JobId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_ExecutionMedia_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Licenses_dbo_HostLicenses_HostLicenseId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_JobEvents_dbo_Jobs_JobId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_JobEvents_dbo_Users_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Jobs_dbo_ProcessSchedules_StartingScheduleId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Jobs_dbo_Releases_ReleaseId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Jobs_dbo_ReleaseVersions_ReleaseVersionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Jobs_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_JobTriggers_dbo_Jobs_JobId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Sessions_dbo_Jobs_JobId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Robots_dbo_Machines_MachineId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Sessions_dbo_Machines_MachineId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpOrganizationUnits_dbo_AbpOrganizationUnits_ParentId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_UserOrganizationUnits_dbo_OrganizationUnits_OrganizationUnitId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpPermissions_dbo_AbpRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpPermissions_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_PreviousPasswords_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_ProcessSchedules_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_ProcessSchedules_dbo_Releases_ReleaseId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueDefinitions_dbo_Releases_ReleaseId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItems_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueProcessingRecords_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueProcessingRecordsOld_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueProcessingRecordsStaging_dbo_QueueDefinitions_QueueDefinitionId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItemComments_dbo_QueueItems_QueueItemId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItemComments_dbo_Users_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItemEvents_dbo_QueueItems_QueueItemId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItemEvents_dbo_Users_ReviewerUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItemEvents_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItems_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_QueueItems_dbo_Users_ReviewerUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_ReleaseVersions_dbo_Releases_ReleaseId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_RobotCredentials_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_RobotLicenseLogs_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_RobotLicenses_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Robots_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Sessions_dbo_Robots_RobotId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpRoles_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpRoles_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpRoles_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_UserOrganizationUnits_dbo_Roles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpSettings_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Tasks_dbo_TaskCatalogs_TaskCatalogId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_Tasks_dbo_Users_AssignedToUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpTenants_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpTenants_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpTenants_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpUserClaims_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpUserLogins_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_UserOrganizationUnits_dbo_Users_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpUserRoles_dbo_AbpUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpUsers_dbo_AbpUsers_CreatorUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpUsers_dbo_AbpUsers_DeleterUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_AbpUsers_dbo_AbpUsers_LastModifierUserId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_dbo_WebhookEvents_dbo_Webhooks_WebhookId" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_QRTZ_CRON_TRIGGERS_QRTZ_TRIGGERS" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_QRTZ_TRIGGERS_QRTZ_JOB_DETAILS" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_QRTZ_SIMPLE_TRIGGERS_QRTZ_TRIGGERS" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.FK_QRTZ_SIMPROP_TRIGGERS_QRTZ_TRIGGERS" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.ProcessSchedulesXRobots" ManuallyRouted="false" />
+        <AssociationConnector Association="UiPath_TestModel.RobotsXEnvironments" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

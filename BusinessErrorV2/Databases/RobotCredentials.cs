@@ -16,9 +16,9 @@ namespace BusinessErrorV2.Databases
     {
         public long RobotId { get; set; }
         public string UserName { get; set; }
-        public string Password { get; set; }
+        public string PasswordKey { get; set; }
         public int TenantId { get; set; }
-        public long OrganizationUnitId { get; set; }
+        public Nullable<long> OrganizationUnitId { get; set; }
         public bool IsDeleted { get; set; }
         public Nullable<long> DeleterUserId { get; set; }
         public Nullable<System.DateTime> DeletionTime { get; set; }
@@ -27,7 +27,10 @@ namespace BusinessErrorV2.Databases
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
         public int Type { get; set; }
+        public string ExternalName { get; set; }
+        public long CredentialStoreId { get; set; }
     
+        public virtual CredentialStores CredentialStores { get; set; }
         public virtual Robots Robots { get; set; }
     }
 }

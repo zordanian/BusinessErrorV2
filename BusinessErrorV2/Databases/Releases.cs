@@ -20,6 +20,7 @@ namespace BusinessErrorV2.Databases
             this.AssetValues = new HashSet<AssetValues>();
             this.Jobs = new HashSet<Jobs>();
             this.ProcessSchedules = new HashSet<ProcessSchedules>();
+            this.QueueDefinitions = new HashSet<QueueDefinitions>();
             this.ReleaseVersions = new HashSet<ReleaseVersions>();
         }
     
@@ -31,7 +32,7 @@ namespace BusinessErrorV2.Databases
         public string ProcessKey { get; set; }
         public bool Unattended { get; set; }
         public bool AllowMultiInstance { get; set; }
-        public long EnvironmentId { get; set; }
+        public Nullable<long> EnvironmentId { get; set; }
         public bool IsDeleted { get; set; }
         public Nullable<long> DeleterUserId { get; set; }
         public Nullable<System.DateTime> DeletionTime { get; set; }
@@ -41,6 +42,7 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> CreatorUserId { get; set; }
         public long OrganizationUnitId { get; set; }
         public string InputArguments { get; set; }
+        public string ProcessSettings { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssetValues> AssetValues { get; set; }
@@ -49,6 +51,8 @@ namespace BusinessErrorV2.Databases
         public virtual ICollection<Jobs> Jobs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProcessSchedules> ProcessSchedules { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<QueueDefinitions> QueueDefinitions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReleaseVersions> ReleaseVersions { get; set; }
     }

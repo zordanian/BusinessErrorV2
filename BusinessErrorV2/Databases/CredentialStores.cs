@@ -12,20 +12,20 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class OrganizationUnits
+    public partial class CredentialStores
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OrganizationUnits()
+        public CredentialStores()
         {
-            this.OrganizationUnits1 = new HashSet<OrganizationUnits>();
-            this.UserOrganizationUnits = new HashSet<UserOrganizationUnits>();
+            this.AssetValues = new HashSet<AssetValues>();
+            this.DefaultCredentialStores = new HashSet<DefaultCredentialStores>();
+            this.RobotCredentials = new HashSet<RobotCredentials>();
         }
     
         public long Id { get; set; }
-        public Nullable<int> TenantId { get; set; }
-        public Nullable<long> ParentId { get; set; }
-        public string Code { get; set; }
-        public string DisplayName { get; set; }
+        public int TenantId { get; set; }
+        public string Name { get; set; }
+        public string AdditionalConfiguration { get; set; }
         public bool IsDeleted { get; set; }
         public Nullable<long> DeleterUserId { get; set; }
         public Nullable<System.DateTime> DeletionTime { get; set; }
@@ -33,16 +33,13 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
-        public int ProvisionType { get; set; }
-        public int PermissionModel { get; set; }
-        public string Description { get; set; }
-        public string Discriminator { get; set; }
-        public string FullyQualifiedName { get; set; }
+        public string Type { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrganizationUnits> OrganizationUnits1 { get; set; }
-        public virtual OrganizationUnits OrganizationUnits2 { get; set; }
+        public virtual ICollection<AssetValues> AssetValues { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserOrganizationUnits> UserOrganizationUnits { get; set; }
+        public virtual ICollection<DefaultCredentialStores> DefaultCredentialStores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RobotCredentials> RobotCredentials { get; set; }
     }
 }

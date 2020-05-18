@@ -18,6 +18,7 @@ namespace BusinessErrorV2.Databases
         public Roles()
         {
             this.Permissions = new HashSet<Permissions>();
+            this.UserOrganizationUnits = new HashSet<UserOrganizationUnits>();
         }
     
         public int Id { get; set; }
@@ -34,11 +35,14 @@ namespace BusinessErrorV2.Databases
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
         public string Groups { get; set; }
+        public string NormalizedName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Permissions> Permissions { get; set; }
         public virtual Users Users { get; set; }
         public virtual Users Users1 { get; set; }
         public virtual Users Users2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserOrganizationUnits> UserOrganizationUnits { get; set; }
     }
 }

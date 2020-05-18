@@ -17,6 +17,7 @@ namespace BusinessErrorV2.Databases
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public QueueDefinitions()
         {
+            this.ProcessSchedules = new HashSet<ProcessSchedules>();
             this.QueueItems = new HashSet<QueueItems>();
             this.QueueProcessingRecords = new HashSet<QueueProcessingRecords>();
             this.QueueProcessingRecordsOld = new HashSet<QueueProcessingRecordsOld>();
@@ -38,7 +39,16 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> CreatorUserId { get; set; }
         public long OrganizationUnitId { get; set; }
         public bool EnforceUniqueReference { get; set; }
+        public string SpecificDataJsonSchema { get; set; }
+        public string OutputDataJsonSchema { get; set; }
+        public string AnalyticsDataJsonSchema { get; set; }
+        public int SlaInMinutes { get; set; }
+        public int RiskSlaInMinutes { get; set; }
+        public Nullable<long> ReleaseId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProcessSchedules> ProcessSchedules { get; set; }
+        public virtual Releases Releases { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QueueItems> QueueItems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

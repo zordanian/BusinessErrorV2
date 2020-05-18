@@ -12,14 +12,18 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class PackageVersions
+    public partial class Calendars
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Calendars()
+        {
+            this.ProcessSchedules = new HashSet<ProcessSchedules>();
+        }
+    
         public long Id { get; set; }
+        public string Name { get; set; }
         public int TenantId { get; set; }
-        public long PackageId { get; set; }
-        public string Version { get; set; }
-        public string InputArguments { get; set; }
-        public string OutputArguments { get; set; }
+        public string QuartzCalendarName { get; set; }
         public bool IsDeleted { get; set; }
         public Nullable<long> DeleterUserId { get; set; }
         public Nullable<System.DateTime> DeletionTime { get; set; }
@@ -28,6 +32,7 @@ namespace BusinessErrorV2.Databases
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
     
-        public virtual Packages Packages { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ProcessSchedules> ProcessSchedules { get; set; }
     }
 }

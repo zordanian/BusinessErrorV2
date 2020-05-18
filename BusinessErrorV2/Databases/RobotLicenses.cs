@@ -24,8 +24,8 @@ namespace BusinessErrorV2.Databases
         public int Slots { get; set; }
         public string LicenseKey { get; set; }
         public bool Enabled { get; set; }
+        public string Properties { get; set; }
     
         public virtual Robots Robots { get; set; }
-        public virtual Tenants Tenants { get; set; }
     }
 }

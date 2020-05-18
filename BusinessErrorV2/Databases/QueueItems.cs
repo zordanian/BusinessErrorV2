@@ -55,6 +55,9 @@ namespace BusinessErrorV2.Databases
         public Nullable<System.DateTime> ProcessingExceptionCreationTime { get; set; }
         public Nullable<long> CreatorJobId { get; set; }
         public Nullable<long> ExecutorJobId { get; set; }
+        public string AnalyticsData { get; set; }
+        public Nullable<System.DateTime> RiskSlaDate { get; set; }
+        public Nullable<bool> HasRiskSlaDate { get; set; }
     
         public virtual QueueDefinitions QueueDefinitions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

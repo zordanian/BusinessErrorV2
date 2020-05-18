@@ -41,6 +41,8 @@ namespace BusinessErrorV2.Databases
         public Nullable<int> Version { get; set; }
         public Nullable<long> EntityId { get; set; }
         public string Discriminator { get; set; }
+        public string ReturnValue { get; set; }
+        public bool IsGlobal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AuditLogEntities> AuditLogEntities { get; set; }

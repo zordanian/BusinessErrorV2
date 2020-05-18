@@ -44,9 +44,16 @@ namespace BusinessErrorV2.Databases
         public bool UseCalendar { get; set; }
         public Nullable<System.DateTime> StopProcessDate { get; set; }
         public string InputArguments { get; set; }
+        public Nullable<long> QueueDefinitionId { get; set; }
+        public long ItemsActivationThreshold { get; set; }
+        public long ItemsPerJobActivationTarget { get; set; }
+        public int MaxJobsForActivation { get; set; }
+        public Nullable<long> CalendarId { get; set; }
     
+        public virtual Calendars Calendars { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Jobs> Jobs { get; set; }
+        public virtual QueueDefinitions QueueDefinitions { get; set; }
         public virtual Releases Releases { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Robots> Robots { get; set; }

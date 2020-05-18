@@ -18,21 +18,25 @@ namespace BusinessErrorV2.Databases
         public Users()
         {
             this.AuditLogs = new HashSet<AuditLogs>();
+            this.JobEvents = new HashSet<JobEvents>();
             this.Permissions = new HashSet<Permissions>();
             this.PreviousPasswords = new HashSet<PreviousPasswords>();
             this.QueueItemComments = new HashSet<QueueItemComments>();
             this.QueueItemEvents = new HashSet<QueueItemEvents>();
             this.QueueItemEvents1 = new HashSet<QueueItemEvents>();
             this.QueueItems = new HashSet<QueueItems>();
+            this.Robots = new HashSet<Robots>();
             this.Roles = new HashSet<Roles>();
             this.Roles1 = new HashSet<Roles>();
             this.Roles2 = new HashSet<Roles>();
             this.Settings = new HashSet<Settings>();
+            this.Tasks = new HashSet<Tasks>();
             this.Tenants = new HashSet<Tenants>();
             this.Tenants1 = new HashSet<Tenants>();
             this.Tenants2 = new HashSet<Tenants>();
             this.UserClaims = new HashSet<UserClaims>();
             this.UserLogins = new HashSet<UserLogins>();
+            this.UserOrganizationUnits = new HashSet<UserOrganizationUnits>();
             this.UserRoles = new HashSet<UserRoles>();
             this.Users1 = new HashSet<Users>();
             this.Users11 = new HashSet<Users>();
@@ -69,9 +73,20 @@ namespace BusinessErrorV2.Databases
         public int Type { get; set; }
         public Nullable<System.DateTime> LastPasswordChangeDate { get; set; }
         public bool IsFirstLogin { get; set; }
+        public string NormalizedEmailAddress { get; set; }
+        public string NormalizedUserName { get; set; }
+        public System.Guid Key { get; set; }
+        public int ProvisionType { get; set; }
+        public Nullable<int> LicenseType { get; set; }
+        public int AllowedSessions { get; set; }
+        public bool IsExternalLicensed { get; set; }
+        public string GroupIds { get; set; }
+        public bool BypassBasicAuthRestriction { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AuditLogs> AuditLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<JobEvents> JobEvents { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Permissions> Permissions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -85,6 +100,8 @@ namespace BusinessErrorV2.Databases
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<QueueItems> QueueItems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Robots> Robots { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Roles> Roles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Roles> Roles1 { get; set; }
@@ -92,6 +109,8 @@ namespace BusinessErrorV2.Databases
         public virtual ICollection<Roles> Roles2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Settings> Settings { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Tasks> Tasks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tenants> Tenants { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -102,6 +121,8 @@ namespace BusinessErrorV2.Databases
         public virtual ICollection<UserClaims> UserClaims { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserLogins> UserLogins { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserOrganizationUnits> UserOrganizationUnits { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRoles> UserRoles { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

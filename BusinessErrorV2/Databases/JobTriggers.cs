@@ -12,17 +12,18 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class RobotLicenseLogs
+    public partial class JobTriggers
     {
         public long Id { get; set; }
-        public Nullable<long> RobotId { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
-        public int RobotType { get; set; }
         public int TenantId { get; set; }
-        public int Scope { get; set; }
-        public string Key { get; set; }
+        public long OrganizationUnitId { get; set; }
+        public long JobId { get; set; }
+        public int Status { get; set; }
+        public int TriggerType { get; set; }
+        public Nullable<long> ItemId { get; set; }
+        public Nullable<System.DateTime> ResumeTime { get; set; }
+        public string TriggerMessage { get; set; }
     
-        public virtual Robots Robots { get; set; }
+        public virtual Jobs Jobs { get; set; }
     }
 }

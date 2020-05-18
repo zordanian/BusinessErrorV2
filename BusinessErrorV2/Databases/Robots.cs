@@ -18,6 +18,7 @@ namespace BusinessErrorV2.Databases
         public Robots()
         {
             this.AssetValues = new HashSet<AssetValues>();
+            this.ExecutionMedia = new HashSet<ExecutionMedia>();
             this.Jobs = new HashSet<Jobs>();
             this.QueueItems = new HashSet<QueueItems>();
             this.RobotLicenseLogs = new HashSet<RobotLicenseLogs>();
@@ -42,14 +43,19 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
-        public long OrganizationUnitId { get; set; }
+        public Nullable<long> OrganizationUnitId { get; set; }
         public string ExecutionSettingsData { get; set; }
         public Nullable<long> MachineId { get; set; }
         public int HostingType { get; set; }
         public string Version { get; set; }
+        public Nullable<long> UserId { get; set; }
+        public int ProvisionType { get; set; }
+        public bool IsExternalLicensed { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AssetValues> AssetValues { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ExecutionMedia> ExecutionMedia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Jobs> Jobs { get; set; }
         public virtual Machines Machines { get; set; }
@@ -60,6 +66,7 @@ namespace BusinessErrorV2.Databases
         public virtual ICollection<RobotLicenseLogs> RobotLicenseLogs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RobotLicenses> RobotLicenses { get; set; }
+        public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sessions> Sessions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

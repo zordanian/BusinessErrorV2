@@ -12,12 +12,12 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class Tenants
+    public partial class DefaultCredentialStores
     {
-        public int Id { get; set; }
-        public string TenancyName { get; set; }
-        public string Name { get; set; }
-        public bool IsActive { get; set; }
+        public long Id { get; set; }
+        public int TenantId { get; set; }
+        public int ResourceType { get; set; }
+        public long CredentialStoreId { get; set; }
         public bool IsDeleted { get; set; }
         public Nullable<long> DeleterUserId { get; set; }
         public Nullable<System.DateTime> DeletionTime { get; set; }
@@ -25,14 +25,7 @@ namespace BusinessErrorV2.Databases
         public Nullable<long> LastModifierUserId { get; set; }
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
-        public Nullable<int> EditionId { get; set; }
-        public string ConnectionString { get; set; }
-        public string AcceptedDomains { get; set; }
-        public string Key { get; set; }
     
-        public virtual Editions Editions { get; set; }
-        public virtual Users Users { get; set; }
-        public virtual Users Users1 { get; set; }
-        public virtual Users Users2 { get; set; }
+        public virtual CredentialStores CredentialStores { get; set; }
     }
 }

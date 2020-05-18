@@ -12,27 +12,24 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class ReleaseVersions
+    public partial class EntityChanges
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ReleaseVersions()
+        public EntityChanges()
         {
-            this.Jobs = new HashSet<Jobs>();
+            this.EntityPropertyChanges = new HashSet<EntityPropertyChanges>();
         }
     
         public long Id { get; set; }
-        public long ReleaseId { get; set; }
-        public string VersionNumber { get; set; }
-        public bool IsDeleted { get; set; }
-        public Nullable<long> DeleterUserId { get; set; }
-        public Nullable<System.DateTime> DeletionTime { get; set; }
-        public Nullable<System.DateTime> LastModificationTime { get; set; }
-        public Nullable<long> LastModifierUserId { get; set; }
-        public System.DateTime CreationTime { get; set; }
-        public Nullable<long> CreatorUserId { get; set; }
+        public System.DateTime ChangeTime { get; set; }
+        public byte ChangeType { get; set; }
+        public long EntityChangeSetId { get; set; }
+        public string EntityId { get; set; }
+        public string EntityTypeFullName { get; set; }
+        public Nullable<int> TenantId { get; set; }
     
+        public virtual EntityChangeSets EntityChangeSets { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Jobs> Jobs { get; set; }
-        public virtual Releases Releases { get; set; }
+        public virtual ICollection<EntityPropertyChanges> EntityPropertyChanges { get; set; }
     }
 }

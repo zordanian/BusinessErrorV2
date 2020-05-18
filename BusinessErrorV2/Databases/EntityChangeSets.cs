@@ -12,31 +12,27 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class Assets
+    public partial class EntityChangeSets
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Assets()
+        public EntityChangeSets()
         {
-            this.AssetValues = new HashSet<AssetValues>();
+            this.EntityChanges = new HashSet<EntityChanges>();
         }
     
         public long Id { get; set; }
-        public string Name { get; set; }
-        public int TenantId { get; set; }
-        public bool CanBeDeleted { get; set; }
-        public int ValueScope { get; set; }
-        public int ValueType { get; set; }
-        public bool IsDeleted { get; set; }
-        public Nullable<long> DeleterUserId { get; set; }
-        public Nullable<System.DateTime> DeletionTime { get; set; }
-        public Nullable<System.DateTime> LastModificationTime { get; set; }
-        public Nullable<long> LastModifierUserId { get; set; }
+        public string BrowserInfo { get; set; }
+        public string ClientIpAddress { get; set; }
+        public string ClientName { get; set; }
         public System.DateTime CreationTime { get; set; }
-        public Nullable<long> CreatorUserId { get; set; }
-        public long OrganizationUnitId { get; set; }
-        public string Description { get; set; }
+        public string ExtensionData { get; set; }
+        public Nullable<int> ImpersonatorTenantId { get; set; }
+        public Nullable<long> ImpersonatorUserId { get; set; }
+        public string Reason { get; set; }
+        public Nullable<int> TenantId { get; set; }
+        public Nullable<long> UserId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AssetValues> AssetValues { get; set; }
+        public virtual ICollection<EntityChanges> EntityChanges { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace BusinessErrorV2.Databases
         public long QueueItemId { get; set; }
         public System.DateTime TimeStamp { get; set; }
         public int Action { get; set; }
-        public long UserId { get; set; }
+        public Nullable<long> UserId { get; set; }
         public int Status { get; set; }
         public int ReviewStatus { get; set; }
         public Nullable<long> ReviewerUserId { get; set; }

@@ -35,6 +35,7 @@ namespace BusinessErrorV2.Databases
         public System.DateTime CreationTime { get; set; }
         public Nullable<long> CreatorUserId { get; set; }
         public int Type { get; set; }
+        public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Robots> Robots { get; set; }

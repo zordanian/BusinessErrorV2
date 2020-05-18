@@ -17,6 +17,9 @@ namespace BusinessErrorV2.Databases
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Jobs()
         {
+            this.ExecutionMedia = new HashSet<ExecutionMedia>();
+            this.JobEvents = new HashSet<JobEvents>();
+            this.JobTriggers = new HashSet<JobTriggers>();
             this.Sessions = new HashSet<Sessions>();
         }
     
@@ -44,10 +47,23 @@ namespace BusinessErrorV2.Databases
         public string InputArguments { get; set; }
         public string OutputArguments { get; set; }
         public string HostMachineName { get; set; }
+        public Nullable<System.Guid> PersistenceId { get; set; }
+        public Nullable<int> ResumeVersion { get; set; }
+        public Nullable<int> SuspendBlobType { get; set; }
+        public Nullable<int> PersistenceLocationVersion { get; set; }
+        public Nullable<int> StopStrategy { get; set; }
+        public Nullable<long> ReleaseVersionId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ExecutionMedia> ExecutionMedia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<JobEvents> JobEvents { get; set; }
         public virtual ProcessSchedules ProcessSchedules { get; set; }
         public virtual Releases Releases { get; set; }
+        public virtual ReleaseVersions ReleaseVersions { get; set; }
         public virtual Robots Robots { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<JobTriggers> JobTriggers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sessions> Sessions { get; set; }
     }

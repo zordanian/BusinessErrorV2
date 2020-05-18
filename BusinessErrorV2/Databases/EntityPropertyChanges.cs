@@ -12,17 +12,16 @@ namespace BusinessErrorV2.Databases
     using System;
     using System.Collections.Generic;
     
-    public partial class RobotLicenseLogs
+    public partial class EntityPropertyChanges
     {
         public long Id { get; set; }
-        public Nullable<long> RobotId { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
-        public int RobotType { get; set; }
-        public int TenantId { get; set; }
-        public int Scope { get; set; }
-        public string Key { get; set; }
+        public long EntityChangeId { get; set; }
+        public string NewValue { get; set; }
+        public string OriginalValue { get; set; }
+        public string PropertyName { get; set; }
+        public string PropertyTypeFullName { get; set; }
+        public Nullable<int> TenantId { get; set; }
     
-        public virtual Robots Robots { get; set; }
+        public virtual EntityChanges EntityChanges { get; set; }
     }
 }
