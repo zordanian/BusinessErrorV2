@@ -19,9 +19,9 @@ namespace BusinessErrorV2.Repository
 
         public IEnumerable<string> getProcessNames()
         {
-            var names = db.Environments.Select(c => c.Name).ToArray();
 
-            return names;
+
+            return null;
         }
 
     }

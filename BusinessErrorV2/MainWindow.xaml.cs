@@ -1,4 +1,5 @@
-﻿using BusinessErrorV2.Databases;
+﻿using BusinessErrorV2.Business_logic;
+using BusinessErrorV2.Databases;
 using BusinessErrorV2.Models;
 using BusinessErrorV2.Repository;
 using BussinesErrorDashboard.Models;
@@ -30,18 +31,16 @@ namespace BusinessErrorV2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<QueueItems> UIpathData { get; set; }
+        public ObservableCollection<QueueItems> QueueItems { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            UIpathData  = new ObservableCollection<QueueItems>();
+            QueueItems  = new ObservableCollection<QueueItems>();
             EnvironmentRepository repo = new EnvironmentRepository();
             ProcessName.ItemsSource = repo.getProcessNames();
 
-        }
-
-        
+        }      
 
         private async void ButtonClick_Click(object sender, RoutedEventArgs e)
         {
@@ -55,33 +54,26 @@ namespace BusinessErrorV2
 
                 Spinner.Spin = true;
                 var query = SearchBox.Text;
-
+              
                 try
                 {
                     from = DateTime.Parse(FromDate.Text).Date;
-                }
-                catch (Exception)
-                {
-
-                }
-                try
-                {
                     to = DateTime.Parse(ToDate.Text).Date;
                 }
-                catch (Exception)
+                catch(Exception)
                 {
 
                 }
-
+                //Get data from db
                 IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query));
 
-                UIpathData = await Task.Run(() => addToList(data));
-                DG.ItemsSource = UIpathData;
-                Spinner.Spin = false;
-            }
-            else
-            {
+                //Add to observable collection
+                QueueItems = await Task.Run(() => addToList(data));
 
+                //Set datagrid source
+                DG.ItemsSource = QueueItems;
+
+                Spinner.Spin = false;
             }
         }
 
@@ -122,44 +114,14 @@ namespace BusinessErrorV2
             string fileName = "";
             if (result == true)
             {
-                // Save document
+                // Get document name and path
                 fileName = dlg.FileName;
             }
-            CreateWorkbook(fileName);
-         }
-
-        private void CreateWorkbook(string filename)
-        {
-            QueueItems item = (QueueItems)DG.SelectedItem;
-            string key = item.Key.ToString();
-            QueueItemsRepository repo = new QueueItemsRepository();
-            IList<string> qI = repo.getItem(key);    
-            DataTable dt = new DataTable();
-            IEnumerable<string> columns = repo.getColumns();
             
-            //Add columns to datatable
-            foreach(var column in columns)
-            {
-                dt.Columns.Add(column);
-            }
+            ConvertToExcel conv = new ConvertToExcel();
+            conv.ConvertData(fileName, QueueItems);
 
-            DataRow dr = dt.NewRow();
-            qI = qI.ToArray();
-
-            for (int i = 0; i < 38; i++)
-            {
-                dr[i] = qI[i];
-                
-            }
-            dt.Rows.Add(dr);
-            Workbook book = new Workbook();
-            Worksheet sheet = book.Worksheets[0];
-            sheet.InsertDataTable(dt, true, 1, 1);
-            book.SaveToFile(filename);
-            //System.Diagnostics.Process.Start("insertTableToExcel.xls");
         }
-
-
 
         private ObservableCollection<QueueItems> addToList(IQueryable<QueueItems> data1)
         {

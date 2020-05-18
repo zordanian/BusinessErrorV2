@@ -30,7 +30,7 @@ namespace BussinesErrorDashboard.Repository
             {
                 try
                 {
-                    tQuery = db.QueueItems.Where(c => c.Reference == query || c.SpecificData.Contains(query));
+                    tQuery = db.QueueItems.Where(c => c.Reference == query || c.SpecificData.Contains(query)).Take(5);
                 }
                 catch
                 {
