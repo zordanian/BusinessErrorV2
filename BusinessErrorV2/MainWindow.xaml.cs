@@ -37,8 +37,9 @@ namespace BusinessErrorV2
         {
             InitializeComponent();
             QueueItems  = new ObservableCollection<QueueItems>();
-            EnvironmentRepository repo = new EnvironmentRepository();
-            ProcessName.ItemsSource = repo.getProcessNames();
+            QueueItemsRepository test = new QueueItemsRepository();
+            //ProcessName.ItemsSource = repo.getProcessNames();
+            
 
         }      
 
@@ -51,7 +52,7 @@ namespace BusinessErrorV2
                 DateTime? from = null;
                 DateTime? to = null;
                 QueueItemsRepository repo = new QueueItemsRepository();
-
+                //String processName = ProcessName.SelectedItem.ToString();
                 Spinner.Spin = true;
                 var query = SearchBox.Text;
               
@@ -67,11 +68,20 @@ namespace BusinessErrorV2
                 //Get data from db
                 IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query));
 
-                //Add to observable collection
-                QueueItems = await Task.Run(() => addToList(data));
+                if(data.Any())
+                {
+                    //Add to observable collection
+                    QueueItems = await Task.Run(() => addToList(data));
 
-                //Set datagrid source
-                DG.ItemsSource = QueueItems;
+                    //Set datagrid source
+                    DG.ItemsSource = QueueItems;
+                }
+                else
+                {
+                    MessageBox.Show("No records found!", "Confirmation",
+                                          MessageBoxButton.OK,
+                                          MessageBoxImage.Question);
+                }
 
                 Spinner.Spin = false;
             }
@@ -81,17 +91,23 @@ namespace BusinessErrorV2
         {
             ElasticSearchRepository es = new ElasticSearchRepository();
             QueueItems item = (QueueItems)DG.SelectedItem;
-            IReadOnlyCollection<LogModel> esData = es.getData(item.Key.ToString(),(DateTime)item.StartProcessing);
-
-            string esDataString = "Process Name: " + esData.ElementAt(0).processName + "\n" +
-               "Robot name: " + esData.ElementAt(0).robotName + "\n" +
-               "Timestamp: " + esData.ElementAt(0).timeStamp + "\n" +
-               "Transaction ID: " + esData.ElementAt(0).TransactionId + "\n" +
-               "Message: " + esData.ElementAt(0).message;
-
-
-            Popup1.IsOpen = true;
-            text.Text = esDataString;
+            IReadOnlyCollection<LogModel> esData = es.getData(item.Key.ToString(),(DateTime)item.CreationTime);
+            if (esData.Any())
+            {
+                string esDataString = "Process Name: " + esData.ElementAt(0).processName + "\n" +
+                   "Robot name: " + esData.ElementAt(0).robotName + "\n" +
+                   "Timestamp: " + esData.ElementAt(0).timeStamp + "\n" +
+                   "Transaction ID: " + esData.ElementAt(0).TransactionId + "\n" +
+                   "Message: " + esData.ElementAt(0).message;
+                Popup1.IsOpen = true;
+                text.Text = esDataString;
+            }
+            else
+            {
+                MessageBox.Show("The index from: " + item.CreationTime + " could not be found, or no data in index" , "Confirmation",
+                                          MessageBoxButton.OK,
+                                          MessageBoxImage.Question);
+            }
 
         }
 
@@ -123,23 +139,25 @@ namespace BusinessErrorV2
 
         }
 
-        private ObservableCollection<QueueItems> addToList(IQueryable<QueueItems> data1)
+        private ObservableCollection<QueueItems> addToList(IQueryable<QueueItems> data)
         {
-            ObservableCollection<QueueItems> test = new ObservableCollection<QueueItems>();
+            ObservableCollection<QueueItems> oc = new ObservableCollection<QueueItems>();
 
-            foreach (var row in data1)
+            foreach (var row in data)
             {
-                test.Add(row);
+                oc.Add(row);
             }
             
-            return test;
+            return oc;
         }
 
-        //private void ProcessName_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    EnvironmentRepository repo = new EnvironmentRepository();
-        //    ProcessName.ItemsSource = repo.getProcessNames();
-        //}
+        private void reset(object sender, RoutedEventArgs e)
+        {
+            FromDate.SelectedDate = null;
+            ToDate.SelectedDate = null;
+            QueueItems.Clear();
+            SearchBox.Text = "";
+        }
     }
 
 }

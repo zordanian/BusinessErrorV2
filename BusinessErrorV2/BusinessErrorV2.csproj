@@ -390,8 +390,11 @@
     <Compile Include="Databases\Webhooks.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\LogModel.cs" />
-    <Compile Include="Models\CheckValidations.cs" />
+    <Compile Include="Business logic\CheckValidations.cs" />
     <Compile Include="Repository\ElasticSearchRepository.cs" />
     <Compile Include="Repository\EnvironmentRepository.cs" />
     <Compile Include="Repository\QueueItemsRepository.cs" />
@@ -401,10 +404,6 @@
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

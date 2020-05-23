@@ -15,24 +15,24 @@ namespace BussinesErrorDashboard.Repository
     {
 
 
-        public IReadOnlyCollection<LogModel> getData(string query, DateTime startProcessing)
+        public IReadOnlyCollection<LogModel> getData(string query, DateTime creationTime)
         {
             var settings = new ConnectionSettings(new Uri("http://nks01480.nykreditnet.net:9201"))
-            .DefaultIndex("default-" + startProcessing.Year + "." + startProcessing.ToString("MM"));
+            .DefaultIndex("default-" + creationTime.Year + "." + creationTime.ToString("MM"));
 
             var client = new ElasticClient(settings);
-
             var searchResponse = client.Search<LogModel>(s => s
             .From(0)
             .Size(1)
             .Query(q => q
-            .Match(m => m
-            .Field(f => f.TransactionId) 
+            .Match(n => n
+            .Field(f => f.TransactionId)
+            .Operator(Operator.And)
             .Query(query)
             )).TypedKeys(null));
 
-            IReadOnlyCollection<LogModel> test = searchResponse.Documents;
-            return test;
+            IReadOnlyCollection<LogModel> esData = searchResponse.Documents;
+            return esData;
         }
     }
 }

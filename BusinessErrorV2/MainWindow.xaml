@@ -26,6 +26,7 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
@@ -42,14 +43,14 @@
         <Popup Name="Popup1" HorizontalAlignment="center"   
         VerticalAlignment="Center" Placement="Center" Width="700" Height="600" IsOpen="False">
             <StackPanel Background="White" Margin="5,5,5,5">
-    
-            <Button VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"  Click="ClosePopup" Width="150" Content="Close window" />
-            <TextBox Grid.Column="1" Grid.Row="1" FontSize="16" VerticalAlignment="Center" x:Name="text" Height="356"/>
+
+                <Button VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"  Click="ClosePopup" Width="150" Content="Close window" />
+                <TextBox Grid.Column="1" Grid.Row="1" FontSize="16" VerticalAlignment="Center" x:Name="text" Height="356"/>
 
             </StackPanel>
         </Popup>
 
-        <DataGrid Grid.Column="1" Grid.Row="5" Name="DG" AlternatingRowBackground="Gray"  CanUserAddRows="False" VerticalAlignment="Top" Grid.ColumnSpan="8"
+        <DataGrid Grid.Column="1" Grid.Row="5" Name="DG" AlternatingRowBackground="Gray"  CanUserAddRows="False" VerticalAlignment="Top" Grid.ColumnSpan="9"
             AutoGenerateColumns="False" Margin="20,20,20,20">
             <DataGrid.Columns>
                 <DataGridTemplateColumn>
@@ -63,7 +64,7 @@
                 <DataGridTextColumn Header="EndProcessing" Binding="{Binding Path=EndProcessing}"/>
                 <DataGridTextColumn Header="Reference" Binding="{Binding Path=Reference}"/>
                 <DataGridTextColumn Header="SpecificData" Binding="{Binding Path=SpecificData}"/>
-                <DataGridTextColumn Header="TransactionId" Binding="{Binding Path=SpecificData}"/>
+                <DataGridTextColumn Header="TransactionId" Binding="{Binding Path=Key}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Label Content="Robot status logs" FontSize="30" Grid.Column="1" Grid.Row="1" />
@@ -73,13 +74,14 @@
         <Label Content="From date" Margin="10,0,0,0" FontSize="10" Grid.Column="3" Grid.Row="2" />
         <Label Content="To date" Margin="10,0,0,0" FontSize="10" Grid.Column="4" Grid.Row="2" />
 
-        <TextBox x:Name="SearchBox" Background="AliceBlue" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" MinWidth="200" MinHeight="30" MaxWidth="100" MaxHeight="30" Grid.ColumnSpan="1" Width="206" Margin="0,5,0,300.6" Grid.RowSpan="4" />
+        <TextBox x:Name="SearchBox" Background="AliceBlue" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" MinWidth="200" MinHeight="3" MaxWidth="100" MaxHeight="30" Grid.ColumnSpan="1" Width="206" Margin="0,5,0,0" Grid.RowSpan="3" Height="42" RenderTransformOrigin="0.535,1.183" />
         <ComboBox Name="ProcessName" Grid.Column="2" Grid.Row="3" Margin="0,0,20,0" Width="100" />
         <DatePicker Focusable="False" x:Name="FromDate" Grid.Column="3" Grid.Row="3" HorizontalAlignment="left"  Width="100" Height="30" Margin="0,0,10,0"/>
         <DatePicker Focusable="False" x:Name="ToDate" Grid.Column="4" Grid.Row="3" HorizontalAlignment="left"  Width="100" Height="30" Margin="0,0,10,0" />
         <Button x:Name="ButtonClick" Grid.Column="5" Grid.Row="3"  HorizontalAlignment="left" Grid.ColumnSpan="2" Width="100" Content="Search" Click="ButtonClick_Click"/>
-        <fa:ImageAwesome Icon="Spinner" x:Name="Spinner" SpinDuration="4" Grid.Column="6" Grid.Row="3" Width="30" Height="30" HorizontalAlignment="Center" Margin="110,0,0,0" />
-        <Button Click="ButtonExcel_Click" Background="BlueViolet" Grid.Row="3" Grid.Column="7" Margin="10,0,0,0">Save to Excel</Button>
+        <fa:ImageAwesome Icon="Spinner" x:Name="Spinner" SpinDuration="4" Grid.Column="8" Grid.Row="3" Width="30" Height="30" HorizontalAlignment="Center" Margin="10,0,0,0" />
+        <Button Click="reset" Background="BlueViolet" Grid.Row="3" Grid.Column="7" Margin="10,0,0,0">Reset</Button>
+        <Button Click="ButtonExcel_Click" Background="BlueViolet" Grid.Row="1" Grid.Column="7" Margin="9.6,23,0.2,21" Grid.RowSpan="2">Save to Excel</Button>
     </Grid>
 
 </Window>
