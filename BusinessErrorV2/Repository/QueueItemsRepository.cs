@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BussinesErrorDashboard.Repository
 {
-    class QueueItemsRepository
+    public class QueueItemsRepository
     {
         private UiPathEntities db;
         private IQueryable<QueueItems> tQuery;

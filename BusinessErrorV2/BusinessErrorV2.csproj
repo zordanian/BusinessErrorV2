@@ -104,7 +104,9 @@
       <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -218,6 +220,11 @@
     </Compile>
     <Compile Include="Databases\Licenses.cs">
       <DependentUpon>Database.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database2\LinqToSQL.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LinqToSQL.dbml</DependentUpon>
     </Compile>
     <Compile Include="Databases\Logs.cs">
       <DependentUpon>Database.tt</DependentUpon>
@@ -393,6 +400,7 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\LinqToSQLRepository.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Business logic\CheckValidations.cs" />
     <Compile Include="Repository\ElasticSearchRepository.cs" />
@@ -421,11 +429,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Database2\LinqToSQL.dbml.layout">
+      <DependentUpon>LinqToSQL.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="BusinessErrorV2_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />
     <EntityDeploy Include="Databases\Database.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -434,6 +444,11 @@
     <None Include="Databases\Database.edmx.diagram">
       <DependentUpon>Database.edmx</DependentUpon>
     </None>
+    <None Include="Database2\LinqToSQL.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>LinqToSQL.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -441,7 +456,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -456,6 +473,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>

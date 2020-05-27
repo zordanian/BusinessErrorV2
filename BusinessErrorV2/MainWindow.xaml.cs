@@ -37,10 +37,10 @@ namespace BusinessErrorV2
         {
             InitializeComponent();
             QueueItems  = new ObservableCollection<QueueItems>();
-            QueueItemsRepository test = new QueueItemsRepository();
-            //ProcessName.ItemsSource = repo.getProcessNames();
+            EnvironmentRepository repo = new EnvironmentRepository();
+            ProcessName.ItemsSource = repo.getProcessNames();
+            LinqToSQLRepository test = new LinqToSQLRepository();
             
-
         }      
 
         private async void ButtonClick_Click(object sender, RoutedEventArgs e)

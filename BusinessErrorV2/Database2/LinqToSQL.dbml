@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="UiPath_Test" Class="LinqToSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PD0773\PDSQL0773;Initial Catalog=UiPath_Test;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="BusinessErrorV2.Properties.Settings" SettingsPropertyName="UiPath_TestConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.QueueItems" Member="QueueItems">
+    <Type Name="QueueItem">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Priority" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QueueDefinitionId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReviewStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RobotId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="StartProcessing" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EndProcessing" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SecondsInPreviousAttempts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AncestorId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="RetryNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SpecificData" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TenantId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastModificationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifierUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DeferDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Progress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Output" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OrganizationUnitId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="RowVersion" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="ProcessingExceptionType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HasDueDate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Reference" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="ReviewerUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ProcessingExceptionReason" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProcessingExceptionDetails" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProcessingExceptionAssociatedImageFilePath" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProcessingExceptionCreationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreatorJobId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ExecutorJobId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AnalyticsData" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RiskSlaDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HasRiskSlaDate" Type="System.Boolean" DbType="Bit" IsDbGenerated="true" CanBeNull="true" />
+      <Association Name="Robot_QueueItem" Member="Robot" ThisKey="RobotId" OtherKey="Id" Type="Robot" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Robots" Member="Robots">
+    <Type Name="Robot">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LicenseKey" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RobotDescription" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="TenantId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleterUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DeletionTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModificationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifierUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OrganizationUnitId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ExecutionSettingsData" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MachineId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="HostingType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="ProvisionType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsExternalLicensed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Robot_QueueItem" Member="QueueItems" ThisKey="Id" OtherKey="RobotId" Type="QueueItem" />
+      <Association Name="Robot_RobotsXEnvironment" Member="RobotsXEnvironments" ThisKey="Id" OtherKey="RobotId" Type="RobotsXEnvironment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RobotsXEnvironments" Member="RobotsXEnvironments">
+    <Type Name="RobotsXEnvironment">
+      <Column Name="EnvironmentId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RobotId" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Robot_RobotsXEnvironment" Member="Robot" ThisKey="RobotId" OtherKey="Id" Type="Robot" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Environment_RobotsXEnvironment" Member="Environment" ThisKey="EnvironmentId" OtherKey="Id" Type="Environment" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Environments" Member="Environments">
+    <Type Name="Environment">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenantId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleterUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DeletionTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModificationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifierUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OrganizationUnitId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="Environment_RobotsXEnvironment" Member="RobotsXEnvironments" ThisKey="Id" OtherKey="EnvironmentId" Type="RobotsXEnvironment" />
+      <Association Name="Environment_Release" Member="Releases" ThisKey="Id" OtherKey="EnvironmentId" Type="Release" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Releases" Member="Releases">
+    <Type Name="Release">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenantId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Key]" Member="Key" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(201) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ProcessKey" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Unattended" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AllowMultiInstance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EnvironmentId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DeleterUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DeletionTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModificationTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifierUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreationTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorUserId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="OrganizationUnitId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="InputArguments" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ProcessSettings" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Environment_Release" Member="Environment" ThisKey="EnvironmentId" OtherKey="Id" Type="Environment" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

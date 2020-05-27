@@ -20,8 +20,8 @@ namespace BusinessErrorV2.Repository
         public IEnumerable<string> getProcessNames()
         {
 
-
-            return null;
+            return db.Environments.Select(n => n.Name).ToList();
+           
         }
 
     }
