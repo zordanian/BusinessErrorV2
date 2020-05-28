@@ -400,7 +400,7 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\LinqToSQLRepository.cs" />
+    <Compile Include="Repository\LinqToSQLRepository.cs" />
     <Compile Include="Models\LogModel.cs" />
     <Compile Include="Business logic\CheckValidations.cs" />
     <Compile Include="Repository\ElasticSearchRepository.cs" />

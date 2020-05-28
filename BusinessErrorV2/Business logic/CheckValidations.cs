@@ -11,7 +11,7 @@ namespace BusinessErrorV2.Models
     class CheckValidations
     {
         public string errorMessage { get; set; }
-        public bool CheckValidation(TextBox query, DatePicker from, DatePicker to)
+        public bool CheckValidation(TextBox query, DatePicker from, DatePicker to,ComboBox ProcessName)
         {
             if(query.Text.Length > 26)
             {
@@ -34,6 +34,11 @@ namespace BusinessErrorV2.Models
             {
                 return true;
             }
+            if (ProcessName.Text != "")
+            {
+                return true;
+            }
+
             //invalidated
 
             if (query.Text != "" && from.Text == "" && to.Text != "")

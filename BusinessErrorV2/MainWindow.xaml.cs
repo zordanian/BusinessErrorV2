@@ -39,14 +39,13 @@ namespace BusinessErrorV2
             QueueItems  = new ObservableCollection<QueueItems>();
             EnvironmentRepository repo = new EnvironmentRepository();
             ProcessName.ItemsSource = repo.getProcessNames();
-            LinqToSQLRepository test = new LinqToSQLRepository();
             
         }      
 
         private async void ButtonClick_Click(object sender, RoutedEventArgs e)
         {
             CheckValidations validate = new CheckValidations();
-            bool vallidation =  validate.CheckValidation(SearchBox,FromDate,ToDate);
+            bool vallidation =  validate.CheckValidation(SearchBox,FromDate,ToDate, ProcessName);
             if (vallidation)
             {
                 DateTime? from = null;
@@ -54,35 +53,44 @@ namespace BusinessErrorV2
                 QueueItemsRepository repo = new QueueItemsRepository();
                 //String processName = ProcessName.SelectedItem.ToString();
                 Spinner.Spin = true;
-                var query = SearchBox.Text;
-              
-                try
-                {
-                    from = DateTime.Parse(FromDate.Text).Date;
-                    to = DateTime.Parse(ToDate.Text).Date;
-                }
-                catch(Exception)
+                string query = SearchBox.Text;
+                String pName = ProcessName.Text;
+
+                if (pName == "")
                 {
 
-                }
-                //Get data from db
-                IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query));
+                    try
+                    {
+                        from = DateTime.Parse(FromDate.Text).Date;
+                        to = DateTime.Parse(ToDate.Text).Date;
+                    }
+                    catch (Exception)
+                    {
 
-                if(data.Any())
-                {
-                    //Add to observable collection
-                    QueueItems = await Task.Run(() => addToList(data));
+                    }
+                    //Get data from db
+                    IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query, pName));
 
-                    //Set datagrid source
-                    DG.ItemsSource = QueueItems;
+                    if (data.Any())
+                    {
+                        //Add to observable collection
+                        QueueItems = await Task.Run(() => addToList(data));
+
+                        //Set datagrid source
+                        DG.ItemsSource = QueueItems;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No records found!", "Confirmation",
+                                              MessageBoxButton.OK,
+                                              MessageBoxImage.Question);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No records found!", "Confirmation",
-                                          MessageBoxButton.OK,
-                                          MessageBoxImage.Question);
+                    LinqToSQLRepository LinqRepo = new LinqToSQLRepository();
+                    DG.ItemsSource = LinqRepo.GetData(pName);
                 }
-
                 Spinner.Spin = false;
             }
         }

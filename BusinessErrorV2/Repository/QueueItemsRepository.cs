@@ -1,4 +1,5 @@
 ﻿using BusinessErrorV2.Databases;
+using BusinessErrorV2.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,18 +15,17 @@ namespace BussinesErrorDashboard.Repository
     {
         private UiPathEntities db;
         private IQueryable<QueueItems> tQuery;
-        
+        private LinqToSQLRepository lqRepo;
 
         public QueueItemsRepository()
         {
             this.db = new UiPathEntities();
-
+            this.lqRepo = new LinqToSQLRepository();
             
         }
 
-        public IQueryable<QueueItems> getData(DateTime? from, DateTime? to,String query)
+        public IQueryable<QueueItems> getData(DateTime? from, DateTime? to,String query, string pName)
         {
-
             if (query != "" && from == null && to == null)
             {
                 try
