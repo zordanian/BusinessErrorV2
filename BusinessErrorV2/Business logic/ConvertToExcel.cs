@@ -1,4 +1,5 @@
-﻿using BusinessErrorV2.Databases;
+﻿using BusinessErrorV2.Database2;
+using BusinessErrorV2.Databases;
 using BussinesErrorDashboard.Repository;
 using Spire.Xls;
 using System;
@@ -13,7 +14,7 @@ namespace BusinessErrorV2.Business_logic
 {
     class ConvertToExcel
     {
-        public void ConvertData(string fileName, ObservableCollection<QueueItems> qI)
+        public void ConvertData(string fileName, ObservableCollection<QueueItem> qI)
         {
             QueueItemsRepository repo = new QueueItemsRepository();
             
@@ -38,7 +39,7 @@ namespace BusinessErrorV2.Business_logic
             {
                 dr = dt.NewRow();
 
-                for (int i = 0; i < 36; i++)
+                for (int i = 0; i < 33; i++)
                 {
                     dr[i] = qI[j].Id.ToString();
                     i++;
@@ -107,12 +108,12 @@ namespace BusinessErrorV2.Business_logic
                     dr[i] = qI[j].CreatorJobId.ToString();
                     i++;
                     dr[i] = qI[j].ExecutorJobId.ToString();
-                    i++;
-                    dr[i] = qI[j].QueueDefinitions.ToString();
-                    i++;
-                    dr[i] = qI[j].QueueItemComments.ToString();
-                    i++;
-                    dr[i] = qI[j].QueueItemEvents.ToString();
+                    //i++;
+                    //dr[i] = qI[j].QueueDefinitions.ToString();
+                    //i++;
+                    //dr[i] = qI[j].QueueItemComments.ToString();
+                    //i++;
+                    //dr[i] = qI[j].QueueItemEvents.ToString();
                     //dr[i] = qI[j].Robots.ToString();     
                     dt.Rows.Add(dr);
                 }

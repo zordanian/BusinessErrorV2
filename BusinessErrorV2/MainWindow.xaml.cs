@@ -1,5 +1,5 @@
 ﻿using BusinessErrorV2.Business_logic;
-using BusinessErrorV2.Databases;
+using BusinessErrorV2.Database2;
 using BusinessErrorV2.Models;
 using BusinessErrorV2.Repository;
 using BussinesErrorDashboard.Models;
@@ -15,14 +15,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace BusinessErrorV2
 {
@@ -31,12 +24,12 @@ namespace BusinessErrorV2
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<QueueItems> QueueItems { get; set; }
+        public ObservableCollection<QueueItem> QIList { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            QueueItems  = new ObservableCollection<QueueItems>();
+            QIList  = new ObservableCollection<QueueItem>();
             EnvironmentRepository repo = new EnvironmentRepository();
             ProcessName.ItemsSource = repo.getProcessNames();
             
@@ -69,15 +62,15 @@ namespace BusinessErrorV2
 
                     }
                     //Get data from db
-                    IQueryable<QueueItems> data = await Task.Run(() => repo.getData(from, to, query, pName));
+                    IQueryable<QueueItem> data = await Task.Run(() => repo.getData(from, to, query, pName));
 
                     if (data.Any())
                     {
                         //Add to observable collection
-                        QueueItems = await Task.Run(() => addToList(data));
+                        QIList = await Task.Run(() => addToList(data));
 
                         //Set datagrid source
-                        DG.ItemsSource = QueueItems;
+                        DG.ItemsSource = QIList;
                     }
                     else
                     {
@@ -89,7 +82,7 @@ namespace BusinessErrorV2
                 else
                 {
                     LinqToSQLRepository LinqRepo = new LinqToSQLRepository();
-                    DG.ItemsSource = LinqRepo.GetData(pName);
+                    DG.ItemsSource = await Task.Run(() => LinqRepo.GetData(pName));
                 }
                 Spinner.Spin = false;
             }
@@ -98,7 +91,7 @@ namespace BusinessErrorV2
         private void ButtonLog_Click(object sender, RoutedEventArgs e)
         {
             ElasticSearchRepository es = new ElasticSearchRepository();
-            QueueItems item = (QueueItems)DG.SelectedItem;
+            QueueItem item = (QueueItem)DG.SelectedItem;
             IReadOnlyCollection<LogModel> esData = es.getData(item.Key.ToString(),(DateTime)item.CreationTime);
             if (esData.Any())
             {
@@ -143,13 +136,13 @@ namespace BusinessErrorV2
             }
             
             ConvertToExcel conv = new ConvertToExcel();
-            conv.ConvertData(fileName, QueueItems);
+            conv.ConvertData(fileName, QIList);
 
         }
 
-        private ObservableCollection<QueueItems> addToList(IQueryable<QueueItems> data)
+        private ObservableCollection<QueueItem> addToList(IQueryable<QueueItem> data)
         {
-            ObservableCollection<QueueItems> oc = new ObservableCollection<QueueItems>();
+            ObservableCollection<QueueItem> oc = new ObservableCollection<QueueItem>();
 
             foreach (var row in data)
             {
@@ -163,7 +156,7 @@ namespace BusinessErrorV2
         {
             FromDate.SelectedDate = null;
             ToDate.SelectedDate = null;
-            QueueItems.Clear();
+            QIList.Clear();
             SearchBox.Text = "";
         }
     }

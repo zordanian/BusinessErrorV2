@@ -1,4 +1,4 @@
-﻿using BusinessErrorV2.Databases;
+﻿using BusinessErrorV2.Database2;
 using BusinessErrorV2.Models;
 using System;
 using System.Collections.Generic;
@@ -13,18 +13,18 @@ namespace BussinesErrorDashboard.Repository
 {
     public class QueueItemsRepository
     {
-        private UiPathEntities db;
-        private IQueryable<QueueItems> tQuery;
+        private LinqToSQLDataContext db;
+        private IQueryable<QueueItem> tQuery;
         private LinqToSQLRepository lqRepo;
 
         public QueueItemsRepository()
         {
-            this.db = new UiPathEntities();
-            this.lqRepo = new LinqToSQLRepository();
+            this.db = new LinqToSQLDataContext();
+           
             
         }
 
-        public IQueryable<QueueItems> getData(DateTime? from, DateTime? to,String query, string pName)
+        public IQueryable<QueueItem> getData(DateTime? from, DateTime? to,String query, string pName)
         {
             if (query != "" && from == null && to == null)
             {
@@ -63,7 +63,7 @@ namespace BussinesErrorDashboard.Repository
         public IList<string> getItem(string transactionId)
         {
 
-            QueueItems qe = db.QueueItems.Single(c => c.Key.ToString() == transactionId);
+            QueueItem qe = db.QueueItems.Single(c => c.Key.ToString() == transactionId);
 
             IList<string> str = new List<string>();
 
@@ -101,10 +101,10 @@ namespace BussinesErrorDashboard.Repository
             str.Add(qe.ProcessingExceptionCreationTime.ToString());
             str.Add(qe.CreatorJobId.ToString());           
             str.Add(qe.ExecutorJobId.ToString());
-            str.Add(qe.QueueDefinitions.ToString());
-            str.Add(qe.QueueItemComments.ToString());
-            str.Add(qe.QueueItemEvents.ToString());
-            str.Add(qe.Robots.ToString());
+            //str.Add(qe.QueueDefinitions.ToString());
+            //str.Add(qe.QueueItemComments.ToString());
+            //str.Add(qe.QueueItemEvents.ToString());
+            //str.Add(qe.Robots.ToString());
             //str.Add(qe.Users.ToString());
 
             return str;
@@ -112,7 +112,7 @@ namespace BussinesErrorDashboard.Repository
 
         public IEnumerable<string> getColumns()
         {
-            var names = typeof(QueueItems).GetProperties()
+            var names = typeof(QueueItem).GetProperties()
                         .Select(property => property.Name)
                         .ToArray();
             return names;
