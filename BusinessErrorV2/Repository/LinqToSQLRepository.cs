@@ -1,6 +1,7 @@
 ﻿using BusinessErrorV2.Database2;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace BusinessErrorV2.Models
 {
     class LinqToSQLRepository
     {
-        public IList<QueueItem> GetData(string dropdown)
+        public ObservableCollection<QueueItem> GetData(string dropdown, string query, DateTime? fromDate, DateTime? toDate )
         {
 
             LinqToSQLDataContext ldb = new LinqToSQLDataContext();
@@ -18,12 +19,21 @@ namespace BusinessErrorV2.Models
                                     join c in ldb.RobotsXEnvironments on b.Id equals c.RobotId
                                     join d in ldb.Environments on c.EnvironmentId equals d.Id
                                     join e in ldb.Releases on d.Id equals e.EnvironmentId       
-                                    where e.ProcessKey.Equals(dropdown)                            
+                                    where e.ProcessKey == dropdown || a.Reference == query &&
+                                    a.StartProcessing >= fromDate && a.EndProcessing <= toDate
                                     select a;
 
-            //IList<QueueItem> test = MapToOtherModel(rs);
-            IList<QueueItem>  rsTolist = rs.ToList();
-            return rsTolist;
+
+
+            ObservableCollection<QueueItem> oc = new ObservableCollection<QueueItem>();
+
+            foreach (var row in rs)
+            {
+                oc.Add(row);
+            }
+
+            return oc;
+
         }
 
         //public IList<Databases.QueueItems> MapToOtherModel(IQueryable<QueueItem> rs)

@@ -49,7 +49,7 @@ namespace BusinessErrorV2
                 string query = SearchBox.Text;
                 String pName = ProcessName.Text;
 
-                if (pName == "")
+                if (false)
                 {
 
                     try
@@ -82,7 +82,8 @@ namespace BusinessErrorV2
                 else
                 {
                     LinqToSQLRepository LinqRepo = new LinqToSQLRepository();
-                    DG.ItemsSource = await Task.Run(() => LinqRepo.GetData(pName));
+                    QIList = await Task.Run(() => LinqRepo.GetData(pName,query,from,to));
+                    DG.ItemsSource = QIList;
                 }
                 Spinner.Spin = false;
             }
