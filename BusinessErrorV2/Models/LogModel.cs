@@ -15,7 +15,7 @@ namespace BussinesErrorDashboard.Models
         public string robotName { get; set; }
         public string processName { get; set; }
         public string timeStamp { get; set; }
-
-
+        public string fileName { get; set; }
+       
     }
 }

@@ -40,14 +40,33 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Popup Name="Popup1" HorizontalAlignment="center"   
-        VerticalAlignment="Center" Placement="Center" Width="700" Height="600" IsOpen="False">
-            <StackPanel Background="White" Margin="5,5,5,5">
+        <Popup Name="Popup1" HorizontalAlignment="center" VerticalAlignment="Center" Placement="Center" Width="1000" Height="600" IsOpen="False">
+            
+            <Grid Background="White" Margin="5,5,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="20"/>
+                </Grid.RowDefinitions>
+                <DataGrid Grid.Column="1" Grid.Row="2"  Name="DGPopup" AlternatingRowBackground="Gray"  CanUserAddRows="False" VerticalAlignment="Top" 
+                AutoGenerateColumns="False" Margin="20,20,20,20">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Message" Binding="{Binding Path=message}" />
+                        <DataGridTextColumn Header="Timestamp" Binding="{Binding Path=timeStamp}" />
+                        <DataGridTextColumn Header="File name" Binding="{Binding Path=fileName}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
 
-                <Button VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"  Click="ClosePopup" Width="150" Content="Close window" />
-                <TextBox Grid.Column="1" Grid.Row="1" FontSize="16" VerticalAlignment="Center" x:Name="text" Height="356"/>
+                <Button Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Click="Close_Click" Background="BlueViolet">Close logs</Button>
 
-            </StackPanel>
+            </Grid>
         </Popup>
 
         <DataGrid Grid.Column="1" Grid.Row="5" Name="DG" AlternatingRowBackground="Gray"  CanUserAddRows="False" VerticalAlignment="Top" Grid.ColumnSpan="9"

@@ -44,65 +44,37 @@ namespace BusinessErrorV2
                 DateTime? from = null;
                 DateTime? to = null;
                 QueueItemsRepository repo = new QueueItemsRepository();
-                //String processName = ProcessName.SelectedItem.ToString();
                 Spinner.Spin = true;
                 string query = SearchBox.Text;
                 String pName = ProcessName.Text;
-
-                if (false)
+                try
                 {
-
-                    try
-                    {
-                        from = DateTime.Parse(FromDate.Text).Date;
-                        to = DateTime.Parse(ToDate.Text).Date;
-                    }
-                    catch (Exception)
-                    {
-
-                    }
-                    //Get data from db
-                    IQueryable<QueueItem> data = await Task.Run(() => repo.getData(from, to, query, pName));
-
-                    if (data.Any())
-                    {
-                        //Add to observable collection
-                        QIList = await Task.Run(() => addToList(data));
-
-                        //Set datagrid source
-                        DG.ItemsSource = QIList;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No records found!", "Confirmation",
-                                              MessageBoxButton.OK,
-                                              MessageBoxImage.Question);
-                    }
+                    from = DateTime.Parse(FromDate.Text).Date;
+                    to = DateTime.Parse(ToDate.Text).Date;
                 }
-                else
-                {
-                    LinqToSQLRepository LinqRepo = new LinqToSQLRepository();
-                    QIList = await Task.Run(() => LinqRepo.GetData(pName,query,from,to));
-                    DG.ItemsSource = QIList;
-                }
+                catch { }
+
+                LinqToSQLRepository LinqRepo = new LinqToSQLRepository();
+                QIList = await Task.Run(() => LinqRepo.GetData(pName,query,from,to));
+                
+                DG.ItemsSource = QIList;
                 Spinner.Spin = false;
             }
         }
 
-        private void ButtonLog_Click(object sender, RoutedEventArgs e)
+        private async void ButtonLog_Click(object sender, RoutedEventArgs e)
         {
             ElasticSearchRepository es = new ElasticSearchRepository();
             QueueItem item = (QueueItem)DG.SelectedItem;
-            IReadOnlyCollection<LogModel> esData = es.getData(item.Key.ToString(),(DateTime)item.CreationTime);
+            IReadOnlyCollection<LogModel> esData = await Task.Run(() => es.getData(item.Key.ToString(),(DateTime)item.CreationTime));
+
+
+
             if (esData.Any())
             {
-                string esDataString = "Process Name: " + esData.ElementAt(0).processName + "\n" +
-                   "Robot name: " + esData.ElementAt(0).robotName + "\n" +
-                   "Timestamp: " + esData.ElementAt(0).timeStamp + "\n" +
-                   "Transaction ID: " + esData.ElementAt(0).TransactionId + "\n" +
-                   "Message: " + esData.ElementAt(0).message;
-                Popup1.IsOpen = true;
-                text.Text = esDataString;
+ 
+                DGPopup.ItemsSource = esData;
+                Popup1.IsOpen = true;              
             }
             else
             {
@@ -111,13 +83,6 @@ namespace BusinessErrorV2
                                           MessageBoxImage.Question);
             }
 
-        }
-
-        
-
-        public void ClosePopup(object sender, RoutedEventArgs e)
-        {
-            Popup1.IsOpen = false;
         }
 
         private void ButtonExcel_Click(object sender, RoutedEventArgs e)
@@ -157,8 +122,14 @@ namespace BusinessErrorV2
         {
             FromDate.SelectedDate = null;
             ToDate.SelectedDate = null;
+            ProcessName.Text = null;
             QIList.Clear();
             SearchBox.Text = "";
+        }
+
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            Popup1.IsOpen = false;
         }
     }
 

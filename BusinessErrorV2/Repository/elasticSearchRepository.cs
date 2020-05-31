@@ -23,7 +23,7 @@ namespace BussinesErrorDashboard.Repository
             var client = new ElasticClient(settings);
             var searchResponse = client.Search<LogModel>(s => s
             .From(0)
-            .Size(1)
+            .Size(30)
             .Query(q => q
             .Match(n => n
             .Field(f => f.TransactionId)
