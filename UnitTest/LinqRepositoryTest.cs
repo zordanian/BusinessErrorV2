@@ -10,13 +10,14 @@ namespace UnitTest
         [TestMethod]
         public void QueueItemsRepository_Tests()
         {
-            QueueItemsRepository repo = new QueueItemsRepository();
+            LinqToSQLRepository repo = new LinqToSQLRepository();
             DateTime? from = null;
             DateTime? to = null;
-            String query = "dyn";
+            string query = "dyn";
+            string pName = "";
             
 
-            var test = repo.getData(from, to, query);
+            var test = repo.getData(from, to, query,pName);
             Assert.IsNotNull(test);
 
         }

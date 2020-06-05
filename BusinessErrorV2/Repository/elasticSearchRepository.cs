@@ -15,15 +15,15 @@ namespace BussinesErrorDashboard.Repository
     {
 
 
-        public IReadOnlyCollection<LogModel> getData(string query, DateTime creationTime)
+        public IReadOnlyCollection<LogModel> getData(string query, DateTime startProcessing)
         {
             var settings = new ConnectionSettings(new Uri("http://nks01480.nykreditnet.net:9201"))
-            .DefaultIndex("default-" + creationTime.Year + "." + creationTime.ToString("MM"));
+            .DefaultIndex("default-" + startProcessing.Year + "." + startProcessing.ToString("MM"));
 
             var client = new ElasticClient(settings);
             var searchResponse = client.Search<LogModel>(s => s
             .From(0)
-            .Size(30)
+            .Size(100)
             .Query(q => q
             .Match(n => n
             .Field(f => f.TransactionId)

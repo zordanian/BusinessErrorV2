@@ -41,7 +41,6 @@
         </Grid.RowDefinitions>
 
         <Popup Name="Popup1" HorizontalAlignment="center" VerticalAlignment="Center" Placement="Center" Width="1000" Height="600" IsOpen="False">
-            
             <Grid Background="White" Margin="5,5,5,5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
@@ -55,17 +54,15 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
-                <DataGrid Grid.Column="1" Grid.Row="2"  Name="DGPopup" AlternatingRowBackground="Gray"  CanUserAddRows="False" VerticalAlignment="Top" 
+                <DataGrid Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="2"  Name="DGPopup" AlternatingRowBackground="Gray"  CanUserAddRows="False" VerticalAlignment="Top" 
                 AutoGenerateColumns="False" Margin="20,20,20,20">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Message" Binding="{Binding Path=message}" />
+                        <DataGridTextColumn Header="Message" Binding="{Binding Path=message}"  />
                         <DataGridTextColumn Header="Timestamp" Binding="{Binding Path=timeStamp}" />
                         <DataGridTextColumn Header="File name" Binding="{Binding Path=fileName}"/>
                     </DataGrid.Columns>
                 </DataGrid>
-
-                <Button Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Click="Close_Click" Background="BlueViolet">Close logs</Button>
-
+                <Button Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Click="Close_Click" Background="BlueViolet">Close logs</Button>
             </Grid>
         </Popup>
 

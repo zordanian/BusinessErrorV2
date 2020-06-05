@@ -1,5 +1,6 @@
 ﻿using BusinessErrorV2.Database2;
 using BusinessErrorV2.Models;
+using BusinessErrorV2.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace BussinesErrorDashboard.Repository
+namespace BusinessErrorV2.Repository
 {
     public class QueueItemsRepository
     {

@@ -1,5 +1,6 @@
 ﻿using BusinessErrorV2.Database2;
 using BusinessErrorV2.Databases;
+using BusinessErrorV2.Repository;
 using BussinesErrorDashboard.Repository;
 using Spire.Xls;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessErrorV2.Business_logic
+namespace BusinessErrorV2.Repository
 {
     class ConvertToExcel
     {

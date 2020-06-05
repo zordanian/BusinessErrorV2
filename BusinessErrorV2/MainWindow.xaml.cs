@@ -1,5 +1,4 @@
-﻿using BusinessErrorV2.Business_logic;
-using BusinessErrorV2.Database2;
+﻿using BusinessErrorV2.Database2;
 using BusinessErrorV2.Models;
 using BusinessErrorV2.Repository;
 using BussinesErrorDashboard.Models;
@@ -43,7 +42,7 @@ namespace BusinessErrorV2
             {
                 DateTime? from = null;
                 DateTime? to = null;
-                QueueItemsRepository repo = new QueueItemsRepository();
+                LinqToSQLRepository repo = new LinqToSQLRepository();
                 Spinner.Spin = true;
                 string query = SearchBox.Text;
                 String pName = ProcessName.Text;
@@ -66,7 +65,7 @@ namespace BusinessErrorV2
         {
             ElasticSearchRepository es = new ElasticSearchRepository();
             QueueItem item = (QueueItem)DG.SelectedItem;
-            IReadOnlyCollection<LogModel> esData = await Task.Run(() => es.getData(item.Key.ToString(),(DateTime)item.CreationTime));
+            IReadOnlyCollection<LogModel> esData = await Task.Run(() => es.getData(item.Key.ToString(),(DateTime)item.StartProcessing));
 
 
 

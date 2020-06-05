@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BussinesErrorDashboard.Repository.ElasticSearchRepository" Collapsed="true">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\ElasticSearchRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessErrorV2.Repository.EnvironmentRepository" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\EnvironmentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessErrorV2.Models.LinqToSQLRepository" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAEAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Repository\LinqToSQLRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BussinesErrorDashboard.Repository.QueueItemsRepository" Collapsed="true">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAQAAAAQAAQAAAAAAAAAAAAAAAAAAAAAQAAAACAAAA=</HashCode>
+      <FileName>Repository\QueueItemsRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessErrorV2.MainWindow" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAIAAAAAAABAAAAAAAAAAQIAAAAAAAAQBAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BussinesErrorDashboard.Models.LogModel" Collapsed="true">
+    <Position X="5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAACAAAAAAAAAAACAAAQAAAAAAAAAAAEEAAAAAACA=</HashCode>
+      <FileName>Models\LogModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessErrorV2.Database2.LinqToSQLDataContext" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAgACQBAAAAAARABCAAAIBDAAgAQIAApCIAAAEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BusinessErrorV2.Database2.QueueItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kCOvZOLPsyhHw3Yk0dGOFkBdnGAi/ciz4ysisB7XwRA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusinessErrorV2.Database2.Robot" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qBA2pEAHAiYFAFRs8JdFpExp3KAQTwNDo4IggQg3thg=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusinessErrorV2.Database2.RobotsXEnvironment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAApBAADAABAAAAIQEEAAAABjCAAAAggAAAAIAAAAQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusinessErrorV2.Database2.Environment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAEmJEAFAiclAGBgwJUBJARBjCgQSQAHoYYigQgXJAA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BusinessErrorV2.Database2.Release" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAYuJECHASE3KEQowJUFJARBjCAQSQiHoIQwgUgWqQA=</HashCode>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

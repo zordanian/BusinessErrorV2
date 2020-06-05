@@ -7,9 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace BusinessErrorV2.Models
+namespace BusinessErrorV2.Repository
 {
-    class LinqToSQLRepository
+    public class LinqToSQLRepository
     {
         ObservableCollection<QueueItem> oc = new ObservableCollection<QueueItem>();
 
@@ -18,14 +18,14 @@ namespace BusinessErrorV2.Models
             if (dropdown != "" || query != "")
             {
                 LinqToSQLDataContext ldb = new LinqToSQLDataContext();
-                IQueryable<QueueItem> rs = from a in ldb.QueueItems
+                IQueryable<QueueItem> rs = (from a in ldb.QueueItems
                                            join b in ldb.Robots on a.RobotId equals b.Id
                                            join c in ldb.RobotsXEnvironments on b.Id equals c.RobotId
                                            join d in ldb.Environments on c.EnvironmentId equals d.Id
                                            join e in ldb.Releases on d.Id equals e.EnvironmentId
-                                           where e.ProcessKey == dropdown || a.Reference == query || a.SpecificData.Contains(query) &&
+                                           where a.SpecificData.Contains(query) || a.Reference == query || e.ProcessKey == dropdown &&
                                            a.StartProcessing >= fromDate && a.EndProcessing <= toDate
-                                           select a;
+                                           select a).Take(100);
 
                 foreach (var row in rs)
                 {
@@ -47,13 +47,13 @@ namespace BusinessErrorV2.Models
         public ObservableCollection<QueueItem> getWithOnlyDate(DateTime? fromDate, DateTime? toDate)
         {
             LinqToSQLDataContext ldb = new LinqToSQLDataContext();
-            IQueryable<QueueItem> rs = from a in ldb.QueueItems
+            IQueryable<QueueItem> rs = (from a in ldb.QueueItems
                                        join b in ldb.Robots on a.RobotId equals b.Id
                                        join c in ldb.RobotsXEnvironments on b.Id equals c.RobotId
                                        join d in ldb.Environments on c.EnvironmentId equals d.Id
                                        join e in ldb.Releases on d.Id equals e.EnvironmentId
                                        where a.StartProcessing >= fromDate && a.EndProcessing <= toDate
-                                       select a;
+                                       select a).Take(100);
 
             foreach (var row in rs)
             {
